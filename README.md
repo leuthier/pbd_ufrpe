@@ -24,6 +24,8 @@
 ```
 $ pip --version
 ``` 
+* 1.5.1) If you dont know how to change your python version at cmd look at: [This question](http://stackoverflow.com/questions/18058389/how-to-switch-between-python-2-7-to-python-3-from-command-line)
+
 * 1.6) Install twitter module:
 ```
 $ pip install twitter
