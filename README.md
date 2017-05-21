@@ -20,7 +20,7 @@
 * 1.4) Install pip module: [How do I install pip on Windows](http://www.stackoverflow.com/questions/4750806/how-do-i-install-pip-on-windows)
 * 1.4.1) If you're using a Python 3.4, save [this (link here)](https://bootstrap.pypa.io/get-pip.py) as .py and run. Pip will dowload automatically.
 
-* 1.5) Verify pip already installed:
+* 1.5) Verify pip already installed to your Python version:
 ```
 $ pip --version
 ``` 
