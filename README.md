@@ -2,8 +2,8 @@
 >Bac. Sistemas de Informação - UFRPE <br>
 #### Twitter: [@pbd_ufrpe](https://twitter.com/pbd_ufrpe)
 
-#### Índice
-  * [How to execute](https://github.com/leuthier/pbd_ufrpe/blob/master/README.md#objetivos)
+#### Index
+  * [How to create/execute](https://github.com/leuthier/pbd_ufrpe#how-to-createexecute)
   * [Objectives](https://github.com/leuthier/pbd_ufrpe/blob/master/README.md#objectives)
   * [Team](https://github.com/leuthier/pbd_ufrpe/blob/master/README.md#team)
   * [Questions?](https://github.com/leuthier/pbd_ufrpe/blob/master/README.md#questions)
