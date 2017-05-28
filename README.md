@@ -1,13 +1,13 @@
-### Projeto de Projeto de Banco de Dados (2017.1) (Python + Twitter API)
+### Projeto de Projeto de Banco de Dados (2017.1) (Python + Twitter API + Naive Bayes + MySQL)
 >Bac. Sistemas de Informação - UFRPE <br>
 #### Twitter: [@pbd_ufrpe](https://twitter.com/pbd_ufrpe)
 
 #### Index
-  * [1) How to create/execute](https://github.com/leuthier/pbd_ufrpe#how-to-createexecute)
-  * [2) Objectives](https://github.com/leuthier/pbd_ufrpe/blob/master/README.md#objectives)
-  * [3) Team](https://github.com/leuthier/pbd_ufrpe/blob/master/README.md#team)
-  * [4) Questions?](https://github.com/leuthier/pbd_ufrpe/blob/master/README.md#questions)
-  * [5) References](https://github.com/leuthier/pbd_ufrpe/blob/master/README.md#references)
+  * [1) How to create/execute](https://github.com/leuthier/pbd_ufrpe#1-how-to-createexecute)
+  * [2) Objectives](https://github.com/leuthier/pbd_ufrpe#2-objectives)
+  * [3) Team](https://github.com/leuthier/pbd_ufrpe#3-team)
+  * [4) Questions?](https://github.com/leuthier/pbd_ufrpe#4-questions)
+  * [5) References](https://github.com/leuthier/pbd_ufrpe#5-references)
   
 
 #### 1) How to create/execute?
@@ -33,7 +33,8 @@ $ pip install twitter
 * 1.7) Change your tokens at boXNet.py
 
 #### 2) Objectives
-- [ ] Search anything using Python and Twitter API
+- [x] Search anything using Python and Twitter API
+- [ ] Store tweets from Twitter to MySQL
 - [ ] Make queries and graphs based on last searches at a database
 - [ ] Sentiment Analysis
 
