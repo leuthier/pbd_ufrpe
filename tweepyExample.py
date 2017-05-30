@@ -17,6 +17,6 @@ busca = api.search("#foratemer")
 cricTweet = tweepy.Cursor(api.search, q='#foratemer').items(150)
 
 for tweet in cricTweet:
-   print (tweet.created_at, tweet.text, tweet.lang, tweet.place)
+    print (tweet.text)
 
 
