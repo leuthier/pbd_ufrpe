@@ -1,5 +1,12 @@
-import tweepy
 
+import nltk
+import re
+import pandas as pd
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.naive_bayes import MultinomialNB
+from sklearn import metrics
+from sklearn.model_selection import cross_val_predict
+import tweepy
 
 OAUTH_TOKEN = '865998132517236736-Bn4F0J8agczPJOSE9CzTOzqkrvuTp75'
 OAUTH_SECRET = 'ziX22stOPOkCZi4vQnVLQXOWoUDGeOBaNMu64mDVdxgcq'
@@ -10,13 +17,37 @@ auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
 auth.set_access_token(OAUTH_TOKEN, OAUTH_SECRET)
 
 api = tweepy.API(auth)
-user = api.get_user('twitter')
 
-busca = api.search("#foratemer")
+dataset = pd.read_csv('tweets_mg.csv')
 
-cricTweet = tweepy.Cursor(api.search, q='#foratemer').items(150)
+tweets = dataset['Text'].values
+classes = dataset['Classificacao'].values
 
-for tweet in cricTweet:
-    print (tweet.text)
+vectorizer = CountVectorizer(analyzer="word")
+freq_tweets = vectorizer.fit_transform(tweets)
+modelo = MultinomialNB()
+modelo.fit(freq_tweets,classes)
+
+cricTweet = tweepy.Cursor(api.search, q='#foratemer').items(5)
+
+lista = []
+for twe in cricTweet:
+    lista.append(twe.text)
+    print(twe.text)
+print(lista)
+
+freq_testes = vectorizer.transform(lista)
+print(modelo.predict(freq_testes))
+
+
+
+
+
+
+
+
+
+
+
 
 
