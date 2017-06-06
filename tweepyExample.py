@@ -18,17 +18,25 @@ auth.set_access_token(OAUTH_TOKEN, OAUTH_SECRET)
 
 api = tweepy.API(auth)
 
-dataset = pd.read_csv('tweets_mg.csv')
+dataset = pd.read_csv('Tweets_Mg.csv',encoding='utf-8')
 
 tweets = dataset['Text'].values
 classes = dataset['Classificacao'].values
 
 vectorizer = CountVectorizer(analyzer="word")
+
 freq_tweets = vectorizer.fit_transform(tweets)
 modelo = MultinomialNB()
 modelo.fit(freq_tweets,classes)
 
-cricTweet = tweepy.Cursor(api.search, q='#foratemer').items(5)
+
+# -- APARTIR DAQUI COMEÇA O NOSSO CÓDIGO
+
+
+
+
+
+cricTweet = tweepy.Cursor(api.search, q='#foratemer').items(10)
 
 lista = []
 for twe in cricTweet:
@@ -38,7 +46,8 @@ print(lista)
 
 freq_testes = vectorizer.transform(lista)
 print(modelo.predict(freq_testes))
-
+listaa = modelo.predict(freq_testes).tolist()
+print (listaa.count('Positivo'))
 
 
 
