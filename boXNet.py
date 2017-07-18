@@ -53,7 +53,7 @@ def search_tweets(q, count=100):
 def auto_fav(q, count):
     result = search_tweets(q, count)
     arqQuery = open('query.txt','w')
-    #print ("result statuses", result).encode(sys.stdout.encoding, errors='replace')
+    print ("result statuses", result).encode(sys.stdout.encoding, errors='replace')
    
     #se fizer len(result)+1 ele so pega o ultimo username
     for i in range (0, len(result['statuses'])):

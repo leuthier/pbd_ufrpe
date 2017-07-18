@@ -2,7 +2,7 @@ import pymysql
 
 #cria o esquema VouDeQue caso nao exista e se conecta a ele
 def ConectarBanco():
-    servidor, usuario, senha, esquema = '127.0.0.1', 'root', '', 'VouDeQue'
+    servidor, usuario, senha, esquema = '127.0.0.1', 'root', '1234', 'VouDeQue'
     try:
         db = pymysql.connect(servidor, usuario, senha, esquema)
         cursor = db.cursor()
@@ -10,7 +10,7 @@ def ConectarBanco():
     except:
         db = pymysql.connect(servidor, usuario, senha, '')
         cursor = db.cursor()
-        cursor.execute("CREATE DATABASE VouDeQue DEFAULT CHARACTER SET utf8")
+        cursor.execute("CREATE DATABASE if not exists VouDeQue DEFAULT CHARACTER SET utf8")
 
         db = pymysql.connect(servidor, usuario, senha, esquema)
         cursor = db.cursor()
