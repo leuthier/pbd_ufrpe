@@ -126,13 +126,15 @@ def buscarTweets(query, quantidade):
         sentimento = 5
         while (sentimento not in (1,2,3)):
             sentimento = int(input("Qual o sentimento deste tweet?\n 1 - Positivo\n 2 - Negativo \n 3 - Neutro >>>>> "))
+            if sentimento not in(1,2,3):
+                print("[*ERRO*]Sentimento Inexistente")
         texto_correto = texto_tweet
         nome_correto = nome_usuario
         screen_name_correto = screen_name_usuario
         lugar_correto = lugar_usuario
         if lugar_usuario != "":
             arq.write('dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values(')
-            arq.write("'" + str(nome_correto) + "', '" + str(screen_name_correto) + "', '" + str(screen_name_correto) + "'")
+            arq.write("'" + str(nome_correto) + "', '" + str(screen_name_correto) + "', '" + str(lugar_correto) + "'")
             arq.write(');")\n')
         else:
             arq.write('dao.Executa_SQL("insert into voudeque.usuario(nome, username) values(')
@@ -185,9 +187,7 @@ def buscarTweets(query, quantidade):
         arq.write("except:\n    print('Erro')\n")
     arq.close()
 
-buscarTweets("#uber",30)
-
-
+buscarTweets("#cabify",5)
 
 
 def buscarNovasHashtags(hashtag,listaDeMarcas):

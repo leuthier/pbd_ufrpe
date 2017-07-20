@@ -1,5 +1,8 @@
 ﻿# -*- coding: utf-8 -*-
 import persistencia.DataBase as dao
+
+#UBER#
+#------------------------------------
 dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('MarceloTV', 'MarceloTV', 'MarceloTV');")
 id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'MarceloTV';")[0][0]
 dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario) values(887786640063832064, '#uber dá $50 te chama de vip por usar muito e depois cobra a mais por algo q te deu oi?!  #ubereats te foides?!@ubeareats_br', '2017-07-19 21:30:03', '2', " + str(id_usuario) + ");")
@@ -655,3 +658,277 @@ id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome =
 dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario) values(887236014233853953, 'Iris afirma que regulamentação do @Uber em Goiânia será enviada à Câmara #Uber https://t.co/wxbSJmekZ3 https://t.co/vhj5qt4MDS', '2017-07-18 09:02:04', '2', " + str(id_usuario) + ");")
 dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(887236014233853953, 1);")
 dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uber', '1');")
+
+#---------------------------------------------------
+
+#99POP
+
+dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Henrique Brazão', 'minerobrazao', 'minerobrazao');")
+try:
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Henrique Brazão';")[0][0]
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario) values(887859232527310848, '- Haddad fez sim. Regularizou o Uber e o 99Pop pra vc trabalhar. - Ah, mas prejudicou os taxistas, né?  Aí eu desisti.', '2017-07-20 02:18:31', '3', " + str(id_usuario) + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(887859232527310848, 3);")
+except:
+    print('Erro')
+dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Henrique Brazão', 'minerobrazao', 'minerobrazao');")
+try:
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Henrique Brazão';")[0][0]
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario) values(887858236233220100, 'Entro no 99Pop (não uso Uber) - Opa! Vai pro CEU? - Vou. Ali no Paz. - Trabalho. - Legal. - mas tão construindo CEU? Parou, né?', '2017-07-20 02:14:33', '1', " + str(id_usuario) + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(887858236233220100, 3);")
+except:
+    print('Erro')
+dao.Executa_SQL("insert into voudeque.usuario(nome, username) values('Martinstutors.com', 'martinstutors');")
+try:
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Martinstutors.com';")[0][0]
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario) values(887793221962653696, 'Como conseguir códigos de descontos no Cabify – 99POP – Uber Grátis https://t.co/Pi8dTCwCPt https://t.co/oUdJNK1DxH', '2017-07-19 21:56:13', '3', " + str(id_usuario) + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(887793221962653696, 3);")
+except:
+    print('Erro')
+dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('andrezza detona', 'andrezzadovalle', 'andrezzadovalle');")
+try:
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'andrezza detona';")[0][0]
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario) values(887725693433524224, 'aí você pede um 99pop e vem uma Santa Fe kkkk vamo que vamo ?????????', '2017-07-19 17:27:53', '1', " + str(id_usuario) + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(887725693433524224, 3);")
+except:
+    print('Erro')
+dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Cristovão Lima', 'cristovaolimaa', 'cristovaolimaa');")
+try:
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Cristovão Lima';")[0][0]
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario) values(887691893454319616, 'Gostei de um vídeo @YouTube https://t.co/fQBvJDIy3T conseguir códigos de descontos no Uber, Cabify e 99POP', '2017-07-19 15:13:34', '1', " + str(id_usuario) + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(887691893454319616, 3);")
+except:
+    print('Erro')
+dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Ygor Stegen', 'YgorNeriSantos', 'YgorNeriSantos');")
+try:
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Ygor Stegen';")[0][0]
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario) values(887644343561052160, 'Gostei de um vídeo @YouTube https://t.co/sxw3BRQO3T conseguir códigos de descontos no Uber, Cabify e 99POP', '2017-07-19 12:04:37', '1', " + str(id_usuario) + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(887644343561052160, 3);")
+except:
+    print('Erro')
+dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('catóaba', 'Ricksfranca', 'Ricksfranca');")
+try:
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'catóaba';")[0][0]
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario) values(887453049765154816, '99pop tb tem desconto de 20$ na primeira viagem?', '2017-07-18 23:24:29', '1', " + str(id_usuario) + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(887453049765154816, 3);")
+except:
+    print('Erro')
+dao.Executa_SQL("insert into voudeque.usuario(nome, username) values('Evelyn Gibson', 'Evelyn40239623');")
+try:
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Evelyn Gibson';")[0][0]
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario) values(887419210552311808, 'RT @EvaldodaSilva16: Boa tarde Fiz o cadastro no 99pop já vai vaze aniversário e ainda estou pendente   disse que a doc está OK Só aguardan…', '2017-07-18 21:10:01', '2', " + str(id_usuario) + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(887419210552311808, 3);")
+except:
+    print('Erro')
+dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('?? Creio que não ??', 'FranklyMyDearLi', 'FranklyMyDearLi');")
+try:
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = '?? Creio que não ??';")[0][0]
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario) values(887308089443188736, 'Moço do 99POP obrigada por me convencer a levar uma bala juquinha pra comer depois! Adoçou a minha manhã! ??', '2017-07-18 13:48:28', '1', " + str(id_usuario) + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(887308089443188736, 3);")
+except:
+    print('Erro')
+dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('M?NU', 'manufordinner', 'manufordinner');")
+try:
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'M?NU';")[0][0]
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario) values(887119795556102148, '99Pop é melhor do que Uber. Repassem.', '2017-07-18 01:20:15', '1', " + str(id_usuario) + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(887119795556102148, 3);")
+except:
+    print('Erro')
+dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('natlaia', 'natsscosta', 'natsscosta');")
+try:
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'natlaia';")[0][0]
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario) values(887103343809753088, 'RT @anaguadalupe: só de pensar na música de ed sheeran me teletransporto para um 99POP com cheiro de cachorro molhado em pleno verão da far…', '2017-07-18 00:14:53', '2', " + str(id_usuario) + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(887103343809753088, 3);")
+except:
+    print('Erro')
+dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('ana guadaloopy', 'anaguadalupe', 'anaguadalupe');")
+try:
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'ana guadaloopy';")[0][0]
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario) values(887066484488515587, 'só de pensar na música de ed sheeran me teletransporto para um 99POP com cheiro de cachorro molhado em pleno verão da faria lima engarrafada', '2017-07-17 21:48:25', '2', " + str(id_usuario) + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(887066484488515587, 3);")
+except:
+    print('Erro')
+dao.Executa_SQL("insert into voudeque.usuario(nome, username) values('Jiffy', 'Jiffy20850280');")
+try:
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Jiffy';")[0][0]
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario) values(886847362638913536, 'Quer ganhar R$  15  de desconto no 99POP? https://t.co/fjOhKO0fkz https://t.co/1PfWsrc39t', '2017-07-17 07:17:42', '1', " + str(id_usuario) + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(886847362638913536, 3);")
+except:
+    print('Erro')
+dao.Executa_SQL("insert into voudeque.usuario(nome, username) values('Renan Antunes', 'AntunuesRenan');")
+try:
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Renan Antunes';")[0][0]
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario) values(886765083606515712, 'Já peguei motorista lerdo/ruim nesses aplicativos, mas de hoje do 99pop foi o pior da história. Lerdo pra caramba e ñ parava de falar!', '2017-07-17 01:50:45', '2', " + str(id_usuario) + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(886765083606515712, 3);")
+except:
+    print('Erro')
+dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Bernardo Magalhães', 'belobato', 'belobato');")
+try:
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Bernardo Magalhães';")[0][0]
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario) values(886604495291068416, '@MeliuzOficial boa tarde! Realizei 2 corridas de 99Pop na última sexta e não obtive cashback. Podem me ajudar a entender o que aconteceu?', '2017-07-16 15:12:38', '2', " + str(id_usuario) + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(886604495291068416, 3);")
+except:
+    print('Erro')
+dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Anna Carolina', 'carolprds', 'carolprds');")
+try:
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Anna Carolina';")[0][0]
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario) values(886532071027609600, 'Obrigada 99pop por disponibilizar o número de seus motoristas rerere', '2017-07-16 10:24:51', '1', " + str(id_usuario) + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(886532071027609600, 3);")
+except:
+    print('Erro')
+dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Curso Sensualidade', 'isisahava', 'isisahava');")
+try:
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Curso Sensualidade';")[0][0]
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario) values(886456763792445440, 'O 99pop da 99taxi tá mil vezes melhor do que o uber. Agora numa corrida do bairro Saúde para a Lapa paguei apenas... https://t.co/t2q7F4oVDJ', '2017-07-16 05:25:36', '1', " + str(id_usuario) + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(886456763792445440, 3);")
+except:
+    print('Erro')
+dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Raul Nicacio', 'RaulNicacio', 'RaulNicacio');")
+try:
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Raul Nicacio';")[0][0]
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario) values(886022509165989888, 'Entro no 99pop e já coloco na @maniadobrasil', '2017-07-15 00:40:02', '1', " + str(id_usuario) + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(886022509165989888, 3);")
+except:
+    print('Erro')
+dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Victor Greif', 'victorgreif', 'victorgreif');")
+try:
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Victor Greif';")[0][0]
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario) values(886017400046571520, 'Ganhei 20% de desconto na 99 https://t.co/Xuo5LTuMUY', '2017-07-15 00:19:44', '1', " + str(id_usuario) + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(886017400046571520, 3);")
+except:
+    print('Erro')
+dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('mr 305 dale', 'darthvanner', 'darthvanner');")
+try:
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'mr 305 dale';")[0][0]
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario) values(886001010371682305, '@alephunk se tu ainda tiver em sp abandona o uber e usa o 99pop', '2017-07-14 23:14:36', '1', " + str(id_usuario) + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(886001010371682305, 3);")
+except:
+    print('Erro')
+dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('?? Alda Rocha', 'mjcoffeeholick', 'mjcoffeeholick');")
+try:
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = '?? Alda Rocha';")[0][0]
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario) values(885893604551655424, 'Hoje eu peguei AQUELE táxi! Aquele que vc se lembra pq usa Uber/99pop/cabify', '2017-07-14 16:07:49', '1', " + str(id_usuario) + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(885893604551655424, 3);")
+except:
+    print('Erro')
+dao.Executa_SQL("insert into voudeque.usuario(nome, username) values('???', 'liwenhua_im');")
+try:
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = '???';")[0][0]
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario) values(885840914941227009, 'Você ganhou um desconto do 99POP! https://t.co/eBYFAMHGpt https://t.co/GZ2ab2i0q5', '2017-07-14 12:38:26', '1', " + str(id_usuario) + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(885840914941227009, 3);")
+except:
+    print('Erro')
+dao.Executa_SQL("insert into voudeque.usuario(nome, username) values('???', 'liwenhua_im');")
+try:
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = '???';")[0][0]
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario) values(885840914219810816, 'Você ganhou um desconto do 99POP! https://t.co/eBYFAMHGpt https://t.co/FOXQipU3qz', '2017-07-14 12:38:26', '1', " + str(id_usuario) + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(885840914219810816, 3);")
+except:
+    print('Erro')
+dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Thiago Araújo', 'todearaujo', 'todearaujo');")
+try:
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Thiago Araújo';")[0][0]
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario) values(885828032774144000, 'Ganhei 20% de desconto na 99 https://t.co/MIxpb2R5bX', '2017-07-14 11:47:15', '1', " + str(id_usuario) + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(885828032774144000, 3);")
+except:
+    print('Erro')
+dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('lyão do proerd', 'regionalseis', 'regionalseis');")
+try:
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'lyão do proerd';")[0][0]
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario) values(885700729163395072, '@cacaverdolin eu fico sempre comparando entre uber e 99pop. tem mais barato que esses 2? :O', '2017-07-14 03:21:24', '3', " + str(id_usuario) + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(885700729163395072, 3);")
+except:
+    print('Erro')
+dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('O Motorista', 'OMotorista1', 'OMotorista1');")
+try:
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'O Motorista';")[0][0]
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario) values(885272574212657152, '99 POP Chamas e Dicas - Final Veja como é uma chamada pela 99 pop #OMotorista #99pop #99 https://t.co/ZJufCEKwXJ', '2017-07-12 23:00:03', '3', " + str(id_usuario) + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(885272574212657152, 3);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('omotorista');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('99pop', '3');")
+except:
+    print('Erro')
+dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Snap:ernando.galdino', 'ErnandoGaldino', 'ErnandoGaldino');")
+try:
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Snap:ernando.galdino';")[0][0]
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario) values(885096024070553600, 'https://t.co/6aqAMCBvB7 viagem grátis na 99pop https://t.co/OxMBsdrbVA', '2017-07-12 11:18:31', '1', " + str(id_usuario) + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(885096024070553600, 3);")
+except:
+    print('Erro')
+dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Snap:ernando.galdino', 'ErnandoGaldino', 'ErnandoGaldino');")
+try:
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Snap:ernando.galdino';")[0][0]
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario) values(885095919192084481, 'https://t.co/6aqAMCBvB7 viagem grátis na 99pop', '2017-07-12 11:18:06', '1', " + str(id_usuario) + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(885095919192084481, 3);")
+except:
+    print('Erro')
+dao.Executa_SQL("insert into voudeque.usuario(nome, username) values('Jiffy', 'Jiffy20850280');")
+try:
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Jiffy';")[0][0]
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario) values(885087326984175620, 'Quer ganhar R$  15  de desconto no 99POP? https://t.co/Q40wEYAZUJ https://t.co/n5ZQietvJr', '2017-07-12 10:43:57', '1', " + str(id_usuario) + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(885087326984175620, 3);")
+except:
+    print('Erro')
+dao.Executa_SQL("insert into voudeque.usuario(nome, username) values('Jiffy', 'Jiffy20850280');")
+try:
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Jiffy';")[0][0]
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario) values(885035723044401156, 'Quer ganhar R$  15  de desconto no 99POP? https://t.co/BBEPOzrsIp https://t.co/itgRJk0kNp', '2017-07-12 07:18:54', '1', " + str(id_usuario) + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(885035723044401156, 3);")
+except:
+    print('Erro')
+dao.Executa_SQL("insert into voudeque.usuario(nome, username) values('Jiffy', 'Jiffy20850280');")
+try:
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Jiffy';")[0][0]
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario) values(885035481926389761, 'Quer ganhar R$  15  de desconto no 99POP? https://t.co/BBEPOzrsIp https://t.co/zUw0Pgrd9H', '2017-07-12 07:17:56', '1', " + str(id_usuario) + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(885035481926389761, 3);")
+except:
+    print('Erro')
+dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('lyão do proerd', 'regionalseis', 'regionalseis');")
+try:
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'lyão do proerd';")[0][0]
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario) values(885001534827835393, '@kaleydioscope amiga fui embora daí em 2010 mas uber é a melhor coisa &lt;3 aí nao tem 99pop? é tipo o uber da 99taxis, bem barato', '2017-07-12 05:03:03', '3', " + str(id_usuario) + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(885001534827835393, 3);")
+except:
+    print('Erro')
+dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('leticia.', 'benalet_', 'benalet_');")
+try:
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'leticia.';")[0][0]
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario) values(884989324277764097, 'que nervousor quando entro em taxi uber 99pop cabify que prende a porcaria do cinto por detrás do banco', '2017-07-12 04:14:31', '2', " + str(id_usuario) + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(884989324277764097, 3);")
+except:
+    print('Erro')
+dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Rita Lima', 'ritalimak', 'ritalimak');")
+try:
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Rita Lima';")[0][0]
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario) values(884837136847040512, 'Ganhei esta medalhinha de São Bento, de um motorista da #99pop, qdo estava descendo do carro!… https://t.co/qTLXYA1Q9F', '2017-07-11 18:09:47', '1', " + str(id_usuario) + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(884837136847040512, 3);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('99pop', '3');")
+except:
+    print('Erro')
+dao.Executa_SQL("insert into voudeque.usuario(nome, username) values('Lihuiqing', 'Lihuiqing1');")
+try:
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Lihuiqing';")[0][0]
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario) values(884666445715578881, 'Você ganhou um desconto do 99POP! https://t.co/4DGuj8Sl5f https://t.co/5HziZ0S50r', '2017-07-11 06:51:31', '1', " + str(id_usuario) + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(884666445715578881, 3);")
+except:
+    print('Erro')
+dao.Executa_SQL("insert into voudeque.usuario(nome, username) values('Sonia Grolla', 'Soniagrolla');")
+try:
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Sonia Grolla';")[0][0]
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario) values(884597743490084865, 'RT @voude99: E esse frio logo no início da semana? Mais #UmOtimoMotivoPara você pedir um 99POP. :) https://t.co/sw0gXHkTmU', '2017-07-11 02:18:31', '1', " + str(id_usuario) + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(884597743490084865, 3);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('umotimomotivopara');")
+except:
+    print('Erro')
+dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('clecio lucio', 'cleciolucio', 'cleciolucio');")
+try:
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'clecio lucio';")[0][0]
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario) values(884570840595128320, 'Gostei de um vídeo @YouTube https://t.co/gy3mG8UaEZ alugado para trabalhar com Uber, Cabify ou 99pop, vale a pena?', '2017-07-11 00:31:37', '3', " + str(id_usuario) + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(884570840595128320, 3);")
+except:
+    print('Erro')
+
+
+#------------------------------
+
+#cabify
+
