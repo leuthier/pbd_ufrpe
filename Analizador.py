@@ -48,13 +48,13 @@ def buscarHashtags():
     lista99 = []
     listaCab =[]
     for i in reUber:
-        listaUber.append(i[0][0])
+        listaUber.append(i[0])
     lista.append(listaUber)
     for i in reCab:
-        listaCab.append(i[0][0])
+        listaCab.append(i[0])
     lista.append(listaCab)
     for i in re99:
-        lista99.append(i[0][0])
+        lista99.append(i[0])
     lista.append(lista99)
     return lista
 
@@ -62,13 +62,20 @@ def buscarHashtags():
 
 def pegarTweetsNovos():
     hashtags = buscarHashtags()
-    marca = 0
+    id_marca = 0
     for i in hashtags:
-        marca += 1
-        if marca == 4:
-            marca = 1
+        id_marca += 1
+        if (id_marca == 1 ):
+            marca = "uber"
+        elif id_marca == 2:
+            marca = "cabify"
+        elif id_marca == 3:
+            marca = "99pop"
+        elif id_marca == 4:
+            marca = "uber"
+            id_marca = 1
         for j in i:
-            tweet = tweepy.Cursor(api.search, q=str(i), lang="pt").items(50)
+            tweet = tweepy.Cursor(api.search, q=str(j), lang="pt").items(5)
             for twe in tweet:
                 try:
                     nome_usuario = str(twe.user.name).replace("\n", " ").replace('"', '')
@@ -76,45 +83,61 @@ def pegarTweetsNovos():
                     lugar_usuario = twe.user.location.replace("\n", " ").replace('"', '')
                     id_tweet = twe.id
                     texto_tweet = str(twe.text).replace("\n", " ").replace('"', '')
+                    freq_testes = vectorizer.transform([texto_tweet])
+                    sent = modelo.predict(freq_testes)[0]
+                    if(sent == "Positivo"):
+                        sentimento = 1
+                    elif(sent == "Negativo"):
+                        sentimento = 2
+                    else:
+                        sentimento = 3
                     created_at_tweet = twe.created_at
-                    hashtags = i.entities.get('hashtags')
-                    source_tweet = i.source
-                    coordinate = ""
-                    nome_lugar = ""
-                    location = ""
-                    if (i.place != None):
-                        if (i.place.place_type == "city"):
-                            nome_lugar = i.place.name
-                            location = geolocator.geocode(i.place.full_name)
+                    hashtags = twe.entities.get('hashtags')
+
                     if(lugar_usuario != ""):
-                        dao.Executa_SQL(
-                        "insert into voudeque.usuario(nome, username, nome_lugar) values('" + str(nome_usuario) + "', '" + str(screen_name_usuario) + "', '" + str(lugar_usuario) + "');")
-                    try:
-                        id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = '"+ str(nome_usuario) +"';")[0][0]
-                        dao.Executa_SQL(
-                            "insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario) values(" + str(id_tweet) + ", '" + str(screen_name_usuario) + "', '" + str(lugar_usuario) + "');")
-                        dao.Executa_SQL(
-                            "insert into voudeque.tweet_marca(id_tweet, id_marca) values(887822641662488576, 1);")
-                        dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uber', '1');")
-                        dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uberx', '1');")
-                        dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('ubernata', '1');")
+                        dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('" + str(nome_usuario) + "', '" + str(screen_name_usuario) + "', '" + str(lugar_usuario) + "');")
+                    else:
+                        dao.Executa_SQL("insert into voudeque.usuario(nome, username) values('" + str(nome_usuario) + "', '" + str(screen_name_usuario) + "');")
+                    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = '"+ str(nome_usuario) +"';")[0][0]
+                    dao.Executa_SQL(
+                            "insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario) values('" + str(id_tweet) + "', '" + str(texto_tweet) + "', '" + str(created_at_tweet) + "', '" + str(sentimento)
+                            + "', '" + str(id_usuario) +  "');")
+                    dao.Executa_SQL(
+                            "insert into voudeque.tweet_marca(id_tweet, id_marca) values('" + str(id_tweet) + "', '" + str(marca) + "');")
+                    for j1 in hashtags:
+                        if marca in j1.get("text").lower():
+                            dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('" + str(j.get("text").lower()) + "', '" + str(id_marca) + "');")
+                        else:
+                            dao.Executa_SQL("insert into voudeque.hashtag(texto) values('" + str(j.get("text").lower()) + "');")
+                    if (twe.place != None):
+                        coordenadas = twe.place.bounding_box.coordinates[0][0]
+                        local = geolocator.reverse(query=str(coordenadas[1]) + ", " + str(coordenadas[0]),
+                                                   language="pt")
+                        cidade = local.raw["address"]["city"]
+
+                        dao.Executa_SQL("insert into voudeque.lugar(latitude, longitude, nome_lugar) values('" + str(coordenadas[1]) + "', '" + str(coordenadas[0]) + "', '" + str(
+                            cidade).lower() + "');")
+
+                        id_lugar = dao.Busca_SQL("select id from voudeque.lugar where nome_lugar = '" + str(cidade).lower() + "'" + " and latitude = " + "'" + str(
+                            coordenadas[1]) + "'" + "and longitude = " + "'" + str(coordenadas[0]) + "';")[0][0]
+
+                        dao.Executa_SQL("insert into voudeque.tweet_local(id_tweet, id_local) values('" + str(id_tweet) + ", " + str(id_lugar) + "');")
                 except:
                     print("Exception")
 
 
 
 
-def iniciar():
+def iniciar(tempo):
     while True:
         treinar(modelo,vectorizer)
-        time.sleep(1200)
+        pegarTweetsNovos()
+        time.sleep(tempo)
 
 
 
 
-l=['Iris afirma que regulamentação do @Uber em Goiânia será enviada à Câmara #Uber https://t.co/wxbSJmekZ3 https://t.co/2znvKCpMEj']
-freq_testes = vectorizer.transform(l)
-print(modelo.predict(freq_testes))
+iniciar(20)
 
 
 
