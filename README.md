@@ -10,15 +10,15 @@
   * [5) References](https://github.com/leuthier/pbd_ufrpe#5-references)
   
 
-#### 1) How to create/execute?
-* 1.1) It's necessary a phone number at your Twitter account to register an application: (Phone Number)https://twitter.com/settings/add_phone?edit_phone=true
+#### 1) How to create/execute
+* 1.1) It's necessary a phone number at your Twitter account to register an application: [Phone Number](https://twitter.com/settings/add_phone?edit_phone=true)
 
 * 1.2) Create an application at Twitter: [Create an application](https://apps.twitter.com/app/new)
 
 * 1.3) Copy your tokens: https://apps.twitter.com/app/
 
 * 1.4) Install pip module: [How do I install pip on Windows](http://www.stackoverflow.com/questions/4750806/how-do-i-install-pip-on-windows)
-* 1.4.1) If you're using a Python 3.4, save [this (link here)](https://bootstrap.pypa.io/get-pip.py) as .py and run. Pip will dowload automatically.
+* 1.4.1) If you're using a Python 3.4, save this [(link here)](https://bootstrap.pypa.io/get-pip.py) as .py and run. Pip will dowload automatically.
 
 * 1.5) Verify pip already installed to your Python version:
 ```
@@ -26,23 +26,41 @@ $ pip --version
 ``` 
 * 1.5.1) If you dont know how to change your python version at cmd look at: [This question](http://stackoverflow.com/questions/18058389/how-to-switch-between-python-2-7-to-python-3-from-command-line)
 
-* 1.6) Install twitter module:
+* 1.6) Install those python libs at cmd or terminal:
 ```
-$ pip install twitter
+$ python -m pip install --upgrade pip
+$ pip install tweepy
+```
+cp (python version) - cp34 or cp36<br>
+win - 32 or 64 bits<br>
+Its necessary to [download a numpy](https://pypi.python.org/pypi/numpy) at your python and windows version before continue
+Navigate to your numpy location
+example:
+```
+C:\Users\Aluno> cd downloads
+C:\Users\Aluno\Downloads> pip install numpy-1.13.1+mkl-cp34-cp34m-win32.whl
+$ pip install nltk
+$ pip install scipy
+$ pip install sklearn
+$ pip install geopy
 ``` 
-* 1.7) Change your tokens at boXNet.py
+
+* 1.6) Run [Script VouDeQue.sql](https://github.com/leuthier/pbd_ufrpe/blob/master/Script%20VouDeQue.sql) at MySQL to create a new schema. If necessary change adress or password connection visit [DataBase.py](https://github.com/leuthier/pbd_ufrpe/blob/master/persistencia/DataBase.py) and choose equals at MySQL.
+
+* 1.7) Change your tokens at [tweepyExample.py](https://github.com/leuthier/pbd_ufrpe/blob/master/tweepyExample.py) and run project to search tweets and classify with your own sentiment analysis. Choose 1- Positive, 2- Negative, 3- Neutral.
+
+* 1.8) All tweets found will be at [doc.py](https://github.com/leuthier/pbd_ufrpe/blob/master/doc.py), just run this archive to save at MySQL.
 
 #### 2) Objectives
 - [x] Search anything using Python and Twitter API
-- [ ] Store tweets from Twitter to MySQL
+- [x] Store tweets from Twitter to MySQL
+- [x] Sentiment Analysis
 - [ ] Make queries and graphs based on last searches at a database
-- [ ] Sentiment Analysis
 
 #### 3) Team
 - [Ariana Lima](https://github.com/arianalima)<br>
 - [Bernardo Jr](https://github.com/bernardojr123)<br>
 - [Bruna Vasconcelos](https://github.com/brunapvasconcelos)<br>
-- [Gleydson Araujo](https://github.com/gleydsonageu)<br>
 - [Victor Leuthier](https://github.com/leuthier)<br>
 
 #### 4) Questions
