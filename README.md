@@ -1,4 +1,4 @@
-### Projeto de Projeto de Banco de Dados (2017.1) (Python + Twitter API + Naive Bayes + MySQL)
+### Projeto de Projeto de Banco de Dados (2017.1) (Python + Tweepy API + Naive Bayes + MySQL)
 >Bac. Sistemas de Informação - UFRPE <br>
 #### Twitter: [@pbd_ufrpe](https://twitter.com/pbd_ufrpe)
 
@@ -13,7 +13,7 @@
 #### 1) How to create/execute
 * 1.1) It's necessary a phone number at your Twitter account to register an application: [Phone Number](https://twitter.com/settings/add_phone?edit_phone=true)
 
-* 1.2) Create an application at Twitter: [Create an application](https://apps.twitter.com/app/new)
+* 1.2) Create an application at Twitter: [https://apps.twitter.com/app/new]
 
 * 1.3) Copy your tokens: https://apps.twitter.com/app/
 
