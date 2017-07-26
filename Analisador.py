@@ -76,6 +76,7 @@ def pegarTweetsNovos():
             id_marca = 1
         for j in i:
             tweet = tweepy.Cursor(api.search, q=str(j), lang="pt").items(5)
+            time.sleep(10)
             for twe in tweet:
                 try:
                     nome_usuario = str(twe.user.name).replace("\n", " ").replace('"', '')
@@ -137,7 +138,7 @@ def iniciar(tempo):
 
 
 
-iniciar(20)
+iniciar(20 * 60)
 
 
 
