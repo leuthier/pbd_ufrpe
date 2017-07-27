@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 from geopy.geocoders import Nominatim
-import nltk
+#import nltk
 import re
 import sys
-import pandas as pd
+#import pandas as pd
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.naive_bayes import MultinomialNB
 from sklearn import metrics

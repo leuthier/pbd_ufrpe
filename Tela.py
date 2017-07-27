@@ -140,8 +140,8 @@ def menu():
             esc2 = esc2.lower()
             if esc2 == "s":
                 webbrowser.open_new("https://github.com/leuthier/pbd_ufrpe")
-            elif esc2 == "n":
-                print("Obrigado")
+            print("Agradecemos a visita.")
+            break
         elif esc == "2":
             if buscar_locais() != None:
                 nums = []
@@ -220,9 +220,53 @@ def menu():
             else:
                 print("Devido ao numero restrito de tweets, nenhuma cidade esta disponivel para analise :( ")
         elif esc == "3":
-            # lista2 = buscar_tweets_data(data)
-            # data = "2017-07-18"
-            print()
+            print("A data deve seguir o padrao: ANO-MES-DIA")
+            esc_data = input("\n>>>>")
+            resultado = buscar_tweets_data(esc_data)
+            #data = "2017-07-18"
+
+            pos_uber = resultado[0][0]
+            neg_uber = resultado[0][1]
+            neu_uber = resultado[0][2]
+
+            total_uber = pos_uber+neg_uber+neu_uber
+
+            pos_cabify = resultado[1][0]
+            neg_cabify = resultado[1][1]
+            neu_cabify = resultado[1][2]
+
+            total_cabify = pos_cabify+neg_cabify+neu_cabify
+
+            pos_99pop = resultado[2][0]
+            neg_99pop = resultado[2][1]
+            neu_99pop = resultado[2][2]
+
+            total_99pop = pos_99pop+neg_99pop+neu_99pop
+
+            total = total_uber+total_cabify+total_99pop
+
+            if total==0:
+                print("\n** Erro ** Não há dados para essa data\n")
+                pass
+
+            dpoints = np.array([['Positivo', 'Uber', pos_uber],
+                                ['Positivo', 'Cabify', pos_cabify],
+                                ['Positivo', '99pop', pos_99pop],
+                                ['Neutro', 'Uber', neu_uber],
+                                ['Neutro', 'Cabify', neu_cabify],
+                                ['Neutro', '99pop', neu_99pop],
+                                ['Negativo', 'Uber', neg_uber],
+                                ['Negativo', 'Cabify', neg_cabify],
+                                ['Negativo', '99pop', neg_99pop]])
+
+            fig = plt.figure()
+            ax = fig.add_subplot(111)
+
+            barplot(ax, dpoints)
+            plt.subplots_adjust(bottom=0.20)
+            plt.show()
+
+
         elif esc == "1":
             resultado = buscar_tweets()
             pos_uber = resultado[0][0]
@@ -250,66 +294,120 @@ def menu():
             fig = plt.figure()
             ax = fig.add_subplot(111)
             
-            def barplot(ax, dpoints):
-                
-                # Aggregate the conditions and the categories according to their
-                # mean values
-                conditions = [(c, np.mean(dpoints[dpoints[:,0] == c][:,2].astype(float))) 
-                              for c in np.unique(dpoints[:,0])]
-                categories = [(c, np.mean(dpoints[dpoints[:,1] == c][:,2].astype(float))) 
-                              for c in np.unique(dpoints[:,1])]
-                
-                # sort the conditions, categories and data so that the bars in
-                # the plot will be ordered by category and condition
-                conditions = [c[0] for c in sorted(conditions, key=o.itemgetter(1))]
-                categories = [c[0] for c in sorted(categories, key=o.itemgetter(1))]
-                
-                dpoints = np.array(sorted(dpoints, key=lambda x: categories.index(x[1])))
-            
-                # the space between each set of bars
-                space = 0.2
-                n = len(conditions)
-                width = (1 - space) / (len(conditions))
-                
-                # Create a set of bars at each position
-                for i,cond in enumerate(conditions):
-                    indeces = range(1, len(categories)+1)
-                    vals = dpoints[dpoints[:,0] == cond][:,2].astype(np.float)
-                    pos = [j - (1 - space) / 2. + i * width for j in indeces]
-                    ax.bar(pos, vals, width=width, label=cond, 
-                           color=cm.Accent(float(i) / n))
-                
-                # Set the x-axis tick labels to be equal to the categories
-                ax.set_xticks(indeces)
-                ax.set_xticklabels(categories)
-                plt.setp(plt.xticks()[1], rotation=90)
-                
-                # Add the axis labels
-                ax.set_ylabel("Tweets")
-                ax.set_xlabel("Marcas")
-                
-                # Add a legend
-                handles, labels = ax.get_legend_handles_labels()
-                ax.legend(handles[::-1], labels[::-1], loc='upper left')
+
                     
             barplot(ax, dpoints)
             plt.subplots_adjust(bottom=0.20)
             plt.show()
             
-        elif esc == "3":
-             print("A data devera seguir o padrao: ANO-MES-DIA")
-             esc_data = input("\n>>>>")
-             resultado = buscar_tweets_data_lugar(data,local)
-             #help
-        
         elif esc == "4":
-             print("A data devera seguir o padrao: ANO-MES-DIA")
+             print("A data deve seguir o padrao: ANO-MES-DIA")
              esc_data = input("\n>>>>")
-             resultado = buscar_tweets_data_lugar(data,local)
+
+             if buscar_locais() != None:
+                 nums = []
+                 for i in range(len(cidades)):
+                     print(i, "-", cidades[i])
+                     nums.append(str(i))
+
+                 esc_local = input("Escolha o numero da cidade a ser analisada: ")
+                 if str(esc_local) in nums:
+                     cidade_query = cidades[int(esc_local)]
+
+                 resultado = buscar_tweets_data_lugar(esc_data,cidade_query)
+
+                 pos_uber = resultado[0][0]
+                 neg_uber = resultado[0][1]
+                 neu_uber = resultado[0][2]
+
+                 total_uber = pos_uber + neg_uber + neu_uber
+
+                 pos_cabify = resultado[1][0]
+                 neg_cabify = resultado[1][1]
+                 neu_cabify = resultado[1][2]
+
+                 total_cabify = pos_cabify + neg_cabify + neu_cabify
+
+                 pos_99pop = resultado[2][0]
+                 neg_99pop = resultado[2][1]
+                 neu_99pop = resultado[2][2]
+
+                 total_99pop = pos_99pop + neg_99pop + neu_99pop
+
+                 total = total_uber + total_cabify + total_99pop
+
+                 if total == 0:
+                     print("\n** Erro ** Não há dados para essa data\n")
+                     pass
+
+                 dpoints = np.array([['Positivo', 'Uber', pos_uber],
+                                     ['Positivo', 'Cabify', pos_cabify],
+                                     ['Positivo', '99pop', pos_99pop],
+                                     ['Neutro', 'Uber', neu_uber],
+                                     ['Neutro', 'Cabify', neu_cabify],
+                                     ['Neutro', '99pop', neu_99pop],
+                                     ['Negativo', 'Uber', neg_uber],
+                                     ['Negativo', 'Cabify', neg_cabify],
+                                     ['Negativo', '99pop', neg_99pop]])
+
+                 fig = plt.figure()
+                 ax = fig.add_subplot(111)
+
+                 barplot(ax, dpoints)
+                 plt.subplots_adjust(bottom=0.20)
+                 plt.show()
+
+        elif esc == "5":
+             print("Método em construção. Tente novamente mais tarde.")
+             pass
+             #print("A data devera seguir o padrao: ANO-MES-DIA")
+             #esc_data = input("\n>>>>")
+             #resultado = buscar_tweets_data_lugar(esc_data,local)
              #help
             
     return
-    
+
+
+def barplot(ax, dpoints):
+    # Aggregate the conditions and the categories according to their
+    # mean values
+    conditions = [(c, np.mean(dpoints[dpoints[:, 0] == c][:, 2].astype(float)))
+                  for c in np.unique(dpoints[:, 0])]
+    categories = [(c, np.mean(dpoints[dpoints[:, 1] == c][:, 2].astype(float)))
+                  for c in np.unique(dpoints[:, 1])]
+
+    # sort the conditions, categories and data so that the bars in
+    # the plot will be ordered by category and condition
+    conditions = [c[0] for c in sorted(conditions, key=o.itemgetter(1))]
+    categories = [c[0] for c in sorted(categories, key=o.itemgetter(1))]
+
+    dpoints = np.array(sorted(dpoints, key=lambda x: categories.index(x[1])))
+
+    # the space between each set of bars
+    space = 0.2
+    n = len(conditions)
+    width = (1 - space) / (len(conditions))
+
+    # Create a set of bars at each position
+    for i, cond in enumerate(conditions):
+        indeces = range(1, len(categories) + 1)
+        vals = dpoints[dpoints[:, 0] == cond][:, 2].astype(np.float)
+        pos = [j - (1 - space) / 2. + i * width for j in indeces]
+        ax.bar(pos, vals, width=width, label=cond,
+               color=cm.Accent(float(i) / n))
+
+    # Set the x-axis tick labels to be equal to the categories
+    ax.set_xticks(indeces)
+    ax.set_xticklabels(categories)
+    plt.setp(plt.xticks()[1], rotation=90)
+
+    # Add the axis labels
+    ax.set_ylabel("Tweets")
+    ax.set_xlabel("Marcas")
+
+    # Add a legend
+    handles, labels = ax.get_legend_handles_labels()
+    ax.legend(handles[::-1], labels[::-1], loc='upper left')
 
 menu()
 
