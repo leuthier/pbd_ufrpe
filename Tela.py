@@ -130,7 +130,7 @@ cidades = buscar_locais()
 def menu():
         
     while True:  
-        print("#################################################")
+        print("\n#################################################")
         print("##               VOU DE QUE                    ##")
         print("#################################################")
         esc = input ("\n1 - Pesquisar\n2 - Buscar por local\n3 - Buscar por data\n4 - Buscar por data e local\n5 - Buscar por sentimento\n6 - Sair\n>>> " ) 
@@ -151,7 +151,7 @@ def menu():
                 esc_local = input("Escolha o numero da cidade a ser analisada: ")
                 if str(esc_local) in nums:
                     cidade_query = cidades[int(esc_local)]
-                    esc_local = input("Qual marca vc deseja analisar em "+cidade_query+" ?\n1 - Uber\n2 - Cabify\n3 - 99pop\n4 - Comparar sentimento bom")
+                    esc_local = input("Qual marca vc deseja analisar em "+cidade_query+" ?\n1 - Uber\n2 - Cabify\n3 - 99pop\n4 - Comparar sentimento bom\n>>>> ")
                     resultado = buscar_tweets_local(cidade_query)
                     if esc_local == "1":
                         pos_uber = resultado[0][0]
@@ -159,18 +159,42 @@ def menu():
                         neu_uber = resultado[0][2]
                         total_uber = pos_uber + neg_uber + neu_uber
                         if (total_uber != 0):
-                            sizes = [pos_uber/total_bom, pos_cabify/total_bom, pos_pop/total_bom]
+                            sizes = [pos_uber/total_uber, neg_uber/total_uber, neu_uber/total_uber]
                             fig1, ax1 = plt.subplots()
                             ax1.pie(sizes, labels=labels, autopct='%1.1f%%',shadow=True, startangle=90)
                             ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
                             plt.show()
                         else:
-                            print("** Erro ** Dados insuficientes")
+                            print("\n** Erro ** Dados insuficientes\n")
                     
                     elif esc_local == "2":
-                        resultado[1]
+                         pos_cabify = resultado[1][0]
+                         neg_cabify = resultado[1][1]
+                         neu_cabify = resultado[1][2]
+                         total_cabify = pos_cabify + neg_cabify + neu_cabify
+                         if (total_cabify != 0):
+                             sizes = [pos_cabify/total_cabify, neg_cabify/total_cabify, neu_cabify/total_cabify]
+                             fig1, ax1 = plt.subplots()
+                             ax1.pie(sizes, labels=labels, autopct='%1.1f%%',shadow=True, startangle=90)
+                             ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+                             plt.show()
+                         else:
+                            print("\n** Erro ** Dados insuficientes\n")
+                         
                     elif esc_local == "3":
-                        resultado[2]
+                         pos_99pop = resultado[2][0]
+                         neg_99pop = resultado[2][1]
+                         neu_99pop = resultado[2][2]
+                         total_99pop = pos_99pop + neg_99pop + neu_99pop
+                         if (total_99pop != 0):
+                             sizes = [pos_99pop/total_99pop, neg_99pop/total_99pop, neu_99pop/total_99pop]
+                             fig1, ax1 = plt.subplots()
+                             ax1.pie(sizes, labels=labels, autopct='%1.1f%%',shadow=True, startangle=90)
+                             ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+                             plt.show()
+                         else:
+                            print("\n** Erro ** Dados insuficientes\n")
+                            
                     elif esc_local == "4":
                         labels = 'Uber', 'Cabify', '99Pop'
                         pos_uber = resultado[0][0]
@@ -271,6 +295,18 @@ def menu():
             barplot(ax, dpoints)
             plt.subplots_adjust(bottom=0.20)
             plt.show()
+            
+        elif esc == "3":
+             print("A data devera seguir o padrao: ANO-MES-DIA")
+             esc_data = input("\n>>>>")
+             resultado = buscar_tweets_data_lugar(data,local)
+             #help
+        
+        elif esc == "4":
+             print("A data devera seguir o padrao: ANO-MES-DIA")
+             esc_data = input("\n>>>>")
+             resultado = buscar_tweets_data_lugar(data,local)
+             #help
             
     return
     
