@@ -1,6 +1,11 @@
 # -*- coding: utf-8 -*-
 import persistencia.DataBase as dao
+import webbrowser
+import sys
 import matplotlib.pyplot as plt
+import matplotlib.cm as cm
+import operator as o
+import numpy as np
 
 uber = [[], [], []]
 cabify = [[], [], []]
@@ -194,21 +199,81 @@ def menu():
             # lista2 = buscar_tweets_data(data)
             # data = "2017-07-18"
             print()
+        elif esc == "1":
+            resultado = buscar_tweets()
+            pos_uber = resultado[0][0]
+            neg_uber = resultado[0][1]
+            neu_uber = resultado[0][2]
+             
+            pos_cabify = resultado[1][0]
+            neg_cabify = resultado[1][1]
+            neu_cabify = resultado[1][2]
+             
+            pos_99pop = resultado[2][0]
+            neg_99pop = resultado[2][1]
+            neu_99pop = resultado[2][2]
+            
+            dpoints = np.array([['Positivo', 'Uber',  pos_uber],
+                       ['Positivo', 'Cabify', pos_cabify],
+                       ['Positivo', '99pop', pos_99pop],
+                       ['Neutro', 'Uber', neu_uber],
+                       ['Neutro', 'Cabify', neu_cabify],
+                       ['Neutro', '99pop', neu_99pop],
+                       ['Negativo', 'Uber', neg_uber],
+                       ['Negativo', 'Cabify', neg_cabify],
+                       ['Negativo', '99pop', neg_99pop]])
+            
+            fig = plt.figure()
+            ax = fig.add_subplot(111)
+            
+            def barplot(ax, dpoints):
+                
+                # Aggregate the conditions and the categories according to their
+                # mean values
+                conditions = [(c, np.mean(dpoints[dpoints[:,0] == c][:,2].astype(float))) 
+                              for c in np.unique(dpoints[:,0])]
+                categories = [(c, np.mean(dpoints[dpoints[:,1] == c][:,2].astype(float))) 
+                              for c in np.unique(dpoints[:,1])]
+                
+                # sort the conditions, categories and data so that the bars in
+                # the plot will be ordered by category and condition
+                conditions = [c[0] for c in sorted(conditions, key=o.itemgetter(1))]
+                categories = [c[0] for c in sorted(categories, key=o.itemgetter(1))]
+                
+                dpoints = np.array(sorted(dpoints, key=lambda x: categories.index(x[1])))
+            
+                # the space between each set of bars
+                space = 0.2
+                n = len(conditions)
+                width = (1 - space) / (len(conditions))
+                
+                # Create a set of bars at each position
+                for i,cond in enumerate(conditions):
+                    indeces = range(1, len(categories)+1)
+                    vals = dpoints[dpoints[:,0] == cond][:,2].astype(np.float)
+                    pos = [j - (1 - space) / 2. + i * width for j in indeces]
+                    ax.bar(pos, vals, width=width, label=cond, 
+                           color=cm.Accent(float(i) / n))
+                
+                # Set the x-axis tick labels to be equal to the categories
+                ax.set_xticks(indeces)
+                ax.set_xticklabels(categories)
+                plt.setp(plt.xticks()[1], rotation=90)
+                
+                # Add the axis labels
+                ax.set_ylabel("Tweets")
+                ax.set_xlabel("Marcas")
+                
+                # Add a legend
+                handles, labels = ax.get_legend_handles_labels()
+                ax.legend(handles[::-1], labels[::-1], loc='upper left')
+                    
+            barplot(ax, dpoints)
+            plt.subplots_adjust(bottom=0.20)
+            plt.show()
             
     return
     
 
 menu()
-lis = buscar_tweets()
-print(lis)
-
-print("pos_uber:", pos_uber)
-
-
-
-# while(True):
-#
-#
-#     inpt = input("\nOpÃ§Ãµes:\n 1 - Escolher por cidade\n 2 - Escolher por data\n 3 - Escolher por ambos\n 4 - Sair\n >>>>> ")
-#     if(inpt == 4):
 
