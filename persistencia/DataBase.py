@@ -5,7 +5,7 @@ import pymysql
 def ConectarBanco():
     servidor, usuario, senha, esquema = '127.0.0.1', 'root', '', 'voudeque'
     try:
-        db = pymysql.connect(servidor, usuario, senha, esquema, use_unicode=True)
+        db = pymysql.connect(servidor, usuario, senha, esquema, charset='utf8', use_unicode=True)
         cursor = db.cursor()
 
         return cursor, db
@@ -14,7 +14,7 @@ def ConectarBanco():
         cursor = db.cursor()
         cursor.execute("CREATE DATABASE if not exists voudeque DEFAULT CHARACTER SET utf8")
 
-        db = pymysql.connect(servidor, usuario, senha, esquema)
+        db = pymysql.connect(servidor, usuario, senha, esquema, charset='utf8', use_unicode=True)
         cursor = db.cursor()
 
         return cursor, db

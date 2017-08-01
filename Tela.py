@@ -40,34 +40,40 @@ def buscar_tweets():
     
     return resultado
 
-# def quantidade(resultado):
-#     pos_uber = resultado[0][0]
-#     neg_uber = resultado[0][1]
-#     neu_uber = resultado[0][2]
-#     
-#     pos_cabify = resultado[1][0]
-#     neg_cabify = resultado[1][1]
-#     neu_cabify = resultado[1][2]
-#     
-#     pos_99pop = resultado[2][0]
-#     neg_99pop = resultado[2][1]
-#     neu_99pop = resultado[2][2]
-#     return 
+def quantidadeTweets(resultado):
+    pos_uber = resultado[0][0]
+    neg_uber = resultado[0][1]
+    neu_uber = resultado[0][2]
+    total_uber = pos_uber+neu_uber+neu_uber
+
+    pos_cabify = resultado[1][0]
+    neg_cabify = resultado[1][1]
+    neu_cabify = resultado[1][2]
+    total_cabify = pos_cabify+neg_cabify+neu_cabify
+
+    pos_99pop = resultado[2][0]
+    neg_99pop = resultado[2][1]
+    neu_99pop = resultado[2][2]
+    total_99pop = pos_99pop+neg_99pop+neu_99pop
+
+    total = total_uber+total_99pop+total_cabify
+
+    return pos_uber, neg_uber, neu_uber, total_uber, pos_cabify, neg_cabify, neu_cabify, total_cabify, pos_99pop, neg_99pop, neu_99pop, total_99pop, total
 
 def buscar_tweets_local(local):
     resultado = [[], [], []]
 
-    resultado[0].append(dao.Busca_SQL("select count(*) from voudeque.tweet, voudeque.sentimento, voudeque.marca, voudeque.tweet_marca, voudeque.tweet_local, voudeque.lugar where tweet.id_sentimento = sentimento.id and sentimento.classe = 'Positivo' and tweet_local.id_tweet = tweet.id and tweet_local.id_local = lugar.id and tweet_marca.id_marca = marca.id and tweet_marca.id_tweet = tweet.id and lugar.nome_lugar = '" + local + "' and marca.nome = 'uber';")[0][0])
-    resultado[0].append(dao.Busca_SQL("select count(*) from voudeque.tweet, voudeque.sentimento, voudeque.marca, voudeque.tweet_marca, voudeque.tweet_local, voudeque.lugar where tweet.id_sentimento = sentimento.id and sentimento.classe = 'Negativo' and tweet_local.id_tweet = tweet.id and tweet_local.id_local = lugar.id and tweet_marca.id_marca = marca.id and tweet_marca.id_tweet = tweet.id and lugar.nome_lugar = '" + local + "' and marca.nome = 'uber';")[0][0])
-    resultado[0].append(dao.Busca_SQL("select count(*) from voudeque.tweet, voudeque.sentimento, voudeque.marca, voudeque.tweet_marca, voudeque.tweet_local, voudeque.lugar where tweet.id_sentimento = sentimento.id and sentimento.classe = 'Neutro' and tweet_local.id_tweet = tweet.id and tweet_local.id_local = lugar.id and tweet_marca.id_marca = marca.id and tweet_marca.id_tweet = tweet.id and lugar.nome_lugar = '" + local + "' and marca.nome = 'uber';")[0][0])
+    resultado[0].append(dao.Busca_SQL("select count(*) from voudeque.tweet, voudeque.sentimento, voudeque.marca, voudeque.tweet_marca, voudeque.lugar where tweet.id_sentimento = sentimento.id and sentimento.classe = 'Positivo' and tweet.id_lugar = lugar.id and tweet_marca.id_marca = marca.id and tweet_marca.id_tweet = tweet.id and lugar.nome_lugar = '" + local + "' and marca.nome = 'uber';")[0][0])
+    resultado[0].append(dao.Busca_SQL("select count(*) from voudeque.tweet, voudeque.sentimento, voudeque.marca, voudeque.tweet_marca, voudeque.lugar where tweet.id_sentimento = sentimento.id and sentimento.classe = 'Negativo' and tweet.id_lugar = lugar.id and tweet_marca.id_marca = marca.id and tweet_marca.id_tweet = tweet.id and lugar.nome_lugar = '" + local + "' and marca.nome = 'uber';")[0][0])
+    resultado[0].append(dao.Busca_SQL("select count(*) from voudeque.tweet, voudeque.sentimento, voudeque.marca, voudeque.tweet_marca, voudeque.lugar where tweet.id_sentimento = sentimento.id and sentimento.classe = 'Neutro' and tweet.id_lugar = lugar.id and tweet_marca.id_marca = marca.id and tweet_marca.id_tweet = tweet.id and lugar.nome_lugar = '" + local + "' and marca.nome = 'uber';")[0][0])
 
-    resultado[1].append(dao.Busca_SQL("select count(*) from voudeque.tweet, voudeque.sentimento, voudeque.marca, voudeque.tweet_marca, voudeque.tweet_local, voudeque.lugar where tweet.id_sentimento = sentimento.id and sentimento.classe = 'Positivo' and tweet_local.id_tweet = tweet.id and tweet_local.id_local = lugar.id and tweet_marca.id_marca = marca.id and tweet_marca.id_tweet = tweet.id and lugar.nome_lugar = '" + local + "' and marca.nome = 'cabify';")[0][0])
-    resultado[1].append(dao.Busca_SQL("select count(*) from voudeque.tweet, voudeque.sentimento, voudeque.marca, voudeque.tweet_marca, voudeque.tweet_local, voudeque.lugar where tweet.id_sentimento = sentimento.id and sentimento.classe = 'Negativo' and tweet_local.id_tweet = tweet.id and tweet_local.id_local = lugar.id and tweet_marca.id_marca = marca.id and tweet_marca.id_tweet = tweet.id and lugar.nome_lugar = '" + local + "' and marca.nome = 'cabify';")[0][0])
-    resultado[1].append(dao.Busca_SQL("select count(*) from voudeque.tweet, voudeque.sentimento, voudeque.marca, voudeque.tweet_marca, voudeque.tweet_local, voudeque.lugar where tweet.id_sentimento = sentimento.id and sentimento.classe = 'Neutro' and tweet_local.id_tweet = tweet.id and tweet_local.id_local = lugar.id and tweet_marca.id_marca = marca.id and tweet_marca.id_tweet = tweet.id and lugar.nome_lugar = '" + local + "' and marca.nome = 'cabify';")[0][0])
+    resultado[1].append(dao.Busca_SQL("select count(*) from voudeque.tweet, voudeque.sentimento, voudeque.marca, voudeque.tweet_marca, voudeque.lugar where tweet.id_sentimento = sentimento.id and sentimento.classe = 'Positivo' and tweet.id_lugar = lugar.id and tweet_marca.id_marca = marca.id and tweet_marca.id_tweet = tweet.id and lugar.nome_lugar = '" + local + "' and marca.nome = 'cabify';")[0][0])
+    resultado[1].append(dao.Busca_SQL("select count(*) from voudeque.tweet, voudeque.sentimento, voudeque.marca, voudeque.tweet_marca, voudeque.lugar where tweet.id_sentimento = sentimento.id and sentimento.classe = 'Negativo' and tweet.id_lugar = lugar.id and tweet_marca.id_marca = marca.id and tweet_marca.id_tweet = tweet.id and lugar.nome_lugar = '" + local + "' and marca.nome = 'cabify';")[0][0])
+    resultado[1].append(dao.Busca_SQL("select count(*) from voudeque.tweet, voudeque.sentimento, voudeque.marca, voudeque.tweet_marca, voudeque.lugar where tweet.id_sentimento = sentimento.id and sentimento.classe = 'Neutro' and tweet.id_lugar = lugar.id and tweet_marca.id_marca = marca.id and tweet_marca.id_tweet = tweet.id and lugar.nome_lugar = '" + local + "' and marca.nome = 'cabify';")[0][0])
 
-    resultado[2].append(dao.Busca_SQL("select count(*) from voudeque.tweet, voudeque.sentimento, voudeque.marca, voudeque.tweet_marca, voudeque.tweet_local, voudeque.lugar where tweet.id_sentimento = sentimento.id and sentimento.classe = 'Positivo' and tweet_local.id_tweet = tweet.id and tweet_local.id_local = lugar.id and tweet_marca.id_marca = marca.id and tweet_marca.id_tweet = tweet.id and lugar.nome_lugar = '" + local + "' and marca.nome = '99pop';")[0][0])
-    resultado[2].append(dao.Busca_SQL("select count(*) from voudeque.tweet, voudeque.sentimento, voudeque.marca, voudeque.tweet_marca, voudeque.tweet_local, voudeque.lugar where tweet.id_sentimento = sentimento.id and sentimento.classe = 'Negativo' and tweet_local.id_tweet = tweet.id and tweet_local.id_local = lugar.id and tweet_marca.id_marca = marca.id and tweet_marca.id_tweet = tweet.id and lugar.nome_lugar = '" + local + "' and marca.nome = '99pop';")[0][0])
-    resultado[2].append(dao.Busca_SQL("select count(*) from voudeque.tweet, voudeque.sentimento, voudeque.marca, voudeque.tweet_marca, voudeque.tweet_local, voudeque.lugar where tweet.id_sentimento = sentimento.id and sentimento.classe = 'Neutro' and tweet_local.id_tweet = tweet.id and tweet_local.id_local = lugar.id and tweet_marca.id_marca = marca.id and tweet_marca.id_tweet = tweet.id and lugar.nome_lugar = '" + local + "' and marca.nome = '99pop';")[0][0])
+    resultado[2].append(dao.Busca_SQL("select count(*) from voudeque.tweet, voudeque.sentimento, voudeque.marca, voudeque.tweet_marca, voudeque.lugar where tweet.id_sentimento = sentimento.id and sentimento.classe = 'Positivo' and tweet.id_lugar = lugar.id and tweet_marca.id_marca = marca.id and tweet_marca.id_tweet = tweet.id and lugar.nome_lugar = '" + local + "' and marca.nome = '99pop';")[0][0])
+    resultado[2].append(dao.Busca_SQL("select count(*) from voudeque.tweet, voudeque.sentimento, voudeque.marca, voudeque.tweet_marca, voudeque.lugar where tweet.id_sentimento = sentimento.id and sentimento.classe = 'Negativo' and tweet.id_lugar = lugar.id and tweet_marca.id_marca = marca.id and tweet_marca.id_tweet = tweet.id and lugar.nome_lugar = '" + local + "' and marca.nome = '99pop';")[0][0])
+    resultado[2].append(dao.Busca_SQL("select count(*) from voudeque.tweet, voudeque.sentimento, voudeque.marca, voudeque.tweet_marca, voudeque.lugar where tweet.id_sentimento = sentimento.id and sentimento.classe = 'Neutro' and tweet.id_lugar = lugar.id and tweet_marca.id_marca = marca.id and tweet_marca.id_tweet = tweet.id and lugar.nome_lugar = '" + local + "' and marca.nome = '99pop';")[0][0])
 
     return resultado
 
@@ -91,198 +97,155 @@ def buscar_tweets_data(data):
     return resultado
 
 def buscar_tweets_data_lugar(data,local):
-
     resultado = [[], [], []]
 
-    resultado[0].append(dao.Busca_SQL("select count(*) from voudeque.tweet, voudeque.sentimento, voudeque.marca, voudeque.tweet_marca, voudeque.tweet_local, voudeque.lugar where tweet.id_sentimento = sentimento.id and sentimento.classe = 'Positivo' and tweet_local.id_tweet = tweet.id and tweet_local.id_local = lugar.id and tweet_marca.id_marca = marca.id and tweet_marca.id_tweet = tweet.id and tweet.dataHora like '" + data + "%' and lugar.nome_lugar = '" + local + "' and marca.nome = 'uber';")[0][0])
-    resultado[0].append(dao.Busca_SQL("select count(*) from voudeque.tweet, voudeque.sentimento, voudeque.marca, voudeque.tweet_marca, voudeque.tweet_local, voudeque.lugar where tweet.id_sentimento = sentimento.id and sentimento.classe = 'Negativo' and tweet_local.id_tweet = tweet.id and tweet_local.id_local = lugar.id and tweet_marca.id_marca = marca.id and tweet_marca.id_tweet = tweet.id and tweet.dataHora like '" + data + "%' and lugar.nome_lugar = '" + local + "' and marca.nome = 'uber';")[0][0])
-    resultado[0].append(dao.Busca_SQL("select count(*) from voudeque.tweet, voudeque.sentimento, voudeque.marca, voudeque.tweet_marca, voudeque.tweet_local, voudeque.lugar where tweet.id_sentimento = sentimento.id and sentimento.classe = 'Neutro' and tweet_local.id_tweet = tweet.id and tweet_local.id_local = lugar.id and tweet_marca.id_marca = marca.id and tweet_marca.id_tweet = tweet.id and tweet.dataHora like '" + data + "%' and lugar.nome_lugar = '" + local + "' and marca.nome = 'uber';")[0][0])
+    resultado[0].append(dao.Busca_SQL("select count(*) from voudeque.tweet, voudeque.sentimento, voudeque.marca, voudeque.tweet_marca, voudeque.lugar where tweet.id_sentimento = sentimento.id and sentimento.classe = 'Positivo' and tweet.id_lugar = lugar.id and tweet_marca.id_marca = marca.id and tweet_marca.id_tweet = tweet.id and tweet.dataHora like '" + data + "%' and lugar.nome_lugar = '" + local + "' and marca.nome = 'uber';")[0][0])
+    resultado[0].append(dao.Busca_SQL("select count(*) from voudeque.tweet, voudeque.sentimento, voudeque.marca, voudeque.tweet_marca, voudeque.lugar where tweet.id_sentimento = sentimento.id and sentimento.classe = 'Negativo' and tweet.id_lugar = lugar.id and tweet_marca.id_marca = marca.id and tweet_marca.id_tweet = tweet.id and tweet.dataHora like '" + data + "%' and lugar.nome_lugar = '" + local + "' and marca.nome = 'uber';")[0][0])
+    resultado[0].append(dao.Busca_SQL("select count(*) from voudeque.tweet, voudeque.sentimento, voudeque.marca, voudeque.tweet_marca, voudeque.lugar where tweet.id_sentimento = sentimento.id and sentimento.classe = 'Neutro' and tweet.id_lugar = lugar.id and tweet_marca.id_marca = marca.id and tweet_marca.id_tweet = tweet.id and tweet.dataHora like '" + data + "%' and lugar.nome_lugar = '" + local + "' and marca.nome = 'uber';")[0][0])
 
-    resultado[1].append(dao.Busca_SQL("select count(*) from voudeque.tweet, voudeque.sentimento, voudeque.marca, voudeque.tweet_marca, voudeque.tweet_local, voudeque.lugar where tweet.id_sentimento = sentimento.id and sentimento.classe = 'Positivo' and tweet_local.id_tweet = tweet.id and tweet_local.id_local = lugar.id and tweet_marca.id_marca = marca.id and tweet_marca.id_tweet = tweet.id and tweet.dataHora like '" + data + "%' and lugar.nome_lugar = '" + local + "' and marca.nome = 'cabify';")[0][0])
-    resultado[1].append(dao.Busca_SQL("select count(*) from voudeque.tweet, voudeque.sentimento, voudeque.marca, voudeque.tweet_marca, voudeque.tweet_local, voudeque.lugar where tweet.id_sentimento = sentimento.id and sentimento.classe = 'Negativo' and tweet_local.id_tweet = tweet.id and tweet_local.id_local = lugar.id and tweet_marca.id_marca = marca.id and tweet_marca.id_tweet = tweet.id and tweet.dataHora like '" + data + "%' and lugar.nome_lugar = '" + local + "' and marca.nome = 'cabify';")[0][0])
-    resultado[1].append(dao.Busca_SQL("select count(*) from voudeque.tweet, voudeque.sentimento, voudeque.marca, voudeque.tweet_marca, voudeque.tweet_local, voudeque.lugar where tweet.id_sentimento = sentimento.id and sentimento.classe = 'Neutro' and tweet_local.id_tweet = tweet.id and tweet_local.id_local = lugar.id and tweet_marca.id_marca = marca.id and tweet_marca.id_tweet = tweet.id and tweet.dataHora like '" + data + "%' and lugar.nome_lugar = '" + local + "' and marca.nome = 'cabify';")[0][0])
+    resultado[1].append(dao.Busca_SQL("select count(*) from voudeque.tweet, voudeque.sentimento, voudeque.marca, voudeque.tweet_marca, voudeque.lugar where tweet.id_sentimento = sentimento.id and sentimento.classe = 'Positivo' and tweet.id_lugar = lugar.id and tweet_marca.id_marca = marca.id and tweet_marca.id_tweet = tweet.id and tweet.dataHora like '" + data + "%' and lugar.nome_lugar = '" + local + "' and marca.nome = 'cabify';")[0][0])
+    resultado[1].append(dao.Busca_SQL("select count(*) from voudeque.tweet, voudeque.sentimento, voudeque.marca, voudeque.tweet_marca, voudeque.lugar where tweet.id_sentimento = sentimento.id and sentimento.classe = 'Negativo' and tweet.id_lugar = lugar.id and tweet_marca.id_marca = marca.id and tweet_marca.id_tweet = tweet.id and tweet.dataHora like '" + data + "%' and lugar.nome_lugar = '" + local + "' and marca.nome = 'cabify';")[0][0])
+    resultado[1].append(dao.Busca_SQL("select count(*) from voudeque.tweet, voudeque.sentimento, voudeque.marca, voudeque.tweet_marca, voudeque.lugar where tweet.id_sentimento = sentimento.id and sentimento.classe = 'Neutro' and tweet.id_lugar = lugar.id and tweet_marca.id_marca = marca.id and tweet_marca.id_tweet = tweet.id and tweet.dataHora like '" + data + "%' and lugar.nome_lugar = '" + local + "' and marca.nome = 'cabify';")[0][0])
 
-    resultado[2].append(dao.Busca_SQL("select count(*) from voudeque.tweet, voudeque.sentimento, voudeque.marca, voudeque.tweet_marca, voudeque.tweet_local, voudeque.lugar where tweet.id_sentimento = sentimento.id and sentimento.classe = 'Positivo' and tweet_local.id_tweet = tweet.id and tweet_local.id_local = lugar.id and tweet_marca.id_marca = marca.id and tweet_marca.id_tweet = tweet.id and tweet.dataHora like '" + data + "%'  and lugar.nome_lugar = '" + local + "' and marca.nome = '99pop';")[0][0])
-    resultado[2].append(dao.Busca_SQL("select count(*) from voudeque.tweet, voudeque.sentimento, voudeque.marca, voudeque.tweet_marca, voudeque.tweet_local, voudeque.lugar where tweet.id_sentimento = sentimento.id and sentimento.classe = 'Negativo' and tweet_local.id_tweet = tweet.id and tweet_local.id_local = lugar.id and tweet_marca.id_marca = marca.id and tweet_marca.id_tweet = tweet.id and tweet.dataHora like '" + data + "%' and lugar.nome_lugar = '" + local + "' and marca.nome = '99pop';")[0][0])
-    resultado[2].append(dao.Busca_SQL("select count(*) from voudeque.tweet, voudeque.sentimento, voudeque.marca, voudeque.tweet_marca, voudeque.tweet_local, voudeque.lugar where tweet.id_sentimento = sentimento.id and sentimento.classe = 'Neutro' and tweet_local.id_tweet = tweet.id and tweet_local.id_local = lugar.id and tweet_marca.id_marca = marca.id and tweet_marca.id_tweet = tweet.id and tweet.dataHora like '" + data + "%' and lugar.nome_lugar = '" + local + "' and marca.nome = '99pop';")[0][0])
-
+    resultado[2].append(dao.Busca_SQL("select count(*) from voudeque.tweet, voudeque.sentimento, voudeque.marca, voudeque.tweet_marca, voudeque.lugar where tweet.id_sentimento = sentimento.id and sentimento.classe = 'Positivo' and tweet.id_lugar = lugar.id and tweet_marca.id_marca = marca.id and tweet_marca.id_tweet = tweet.id and tweet.dataHora like '" + data + "%'  and lugar.nome_lugar = '" + local + "' and marca.nome = '99pop';")[0][0])
+    resultado[2].append(dao.Busca_SQL("select count(*) from voudeque.tweet, voudeque.sentimento, voudeque.marca, voudeque.tweet_marca, voudeque.lugar where tweet.id_sentimento = sentimento.id and sentimento.classe = 'Negativo' and tweet.id_lugar = lugar.id and tweet_marca.id_marca = marca.id and tweet_marca.id_tweet = tweet.id and tweet.dataHora like '" + data + "%' and lugar.nome_lugar = '" + local + "' and marca.nome = '99pop';")[0][0])
+    resultado[2].append(dao.Busca_SQL("select count(*) from voudeque.tweet, voudeque.sentimento, voudeque.marca, voudeque.tweet_marca, voudeque.lugar where tweet.id_sentimento = sentimento.id and sentimento.classe = 'Neutro' and tweet.id_lugar = lugar.id and tweet_marca.id_marca = marca.id and tweet_marca.id_tweet = tweet.id and tweet.dataHora like '" + data + "%' and lugar.nome_lugar = '" + local + "' and marca.nome = '99pop';")[0][0])
 
     return resultado
 
 
 
 cidades = buscar_locais()
-#print(cidades)
-###cÃ³digo para testar
-# local = "jaboatÃ£o dos guararapes"
-# data = "2017-07-18"
-#
-# lista1 = buscar_tweets()
-# lista2 = buscar_tweets_data(data)
-# lista3 = buscar_tweets_local(local)
-# lista4 = buscar_tweets_data_lugar(data,local)
-#
-# print("tweets genÃ©ricos" + str(lista1))
-# print("tweets data" + str(lista2))
-# print("tweeets local" + str(lista3))
-# print("tweets local e data" + str(lista4))
 
 def menu():
-        
-    while True:  
+    while True:
         print("\n#################################################")
-        print("##               VOU DE QUE                    ##")
+        print("##               VOU DE QUÊ?                    ##")
         print("#################################################")
-        esc = input ("\n1 - Pesquisar\n2 - Buscar por local\n3 - Buscar por data\n4 - Buscar por data e local\n5 - Buscar por sentimento\n6 - Sair\n>>> " ) 
-        if esc == "6":
-            print ("Saiba mais do nosso projeto em:\n\nhttps://github.com/leuthier/pbd_ufrpe\n")
-            esc2 = input("Deseja acessar o repositorio? (S/N) ")
+        esc = input ("\n1 - Pesquisar\n2 - Buscar por local\n3 - Buscar por data\n4 - Buscar por data e local\n5 - Sair\n>>> " )
+        if esc == "5":  #sair
+            print ("Saiba mais sobre nosso projeto em:\n\nhttps://github.com/leuthier/pbd_ufrpe\n")
+            esc2 = input("Deseja acessar o repositório? (S/N) ")
             esc2 = esc2.lower()
             if esc2 == "s":
                 webbrowser.open_new("https://github.com/leuthier/pbd_ufrpe")
             print("Agradecemos a visita.")
             break
-        elif esc == "2":
+        elif esc == "2":  #buscar por local
             if buscar_locais() != None:
                 nums = []
                 for i in range(len(cidades)):
                     print(i,"-", cidades[i])
                     nums.append(str(i))
-                esc_local = input("Escolha o numero da cidade a ser analisada: ")
+                esc_local = input("Escolha o número da cidade a ser analisada: ")
                 if str(esc_local) in nums:
                     cidade_query = cidades[int(esc_local)]
-                    esc_local = input("Qual marca vc deseja analisar em "+cidade_query+" ?\n1 - Uber\n2 - Cabify\n3 - 99pop\n4 - Comparar sentimento bom\n>>>> ")
                     resultado = buscar_tweets_local(cidade_query)
-                    if esc_local == "1":
-                        pos_uber = resultado[0][0]
-                        neg_uber = resultado[0][1]
-                        neu_uber = resultado[0][2]
-                        total_uber = pos_uber + neg_uber + neu_uber
-                        if (total_uber != 0):
-                            sizes = [pos_uber/total_uber, neg_uber/total_uber, neu_uber/total_uber]
-                            fig1, ax1 = plt.subplots()
-                            ax1.pie(sizes, labels=labels, autopct='%1.1f%%',shadow=True, startangle=90)
-                            ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
-                            plt.show()
-                        else:
-                            print("\n** Erro ** Dados insuficientes\n")
-                    
-                    elif esc_local == "2":
-                         pos_cabify = resultado[1][0]
-                         neg_cabify = resultado[1][1]
-                         neu_cabify = resultado[1][2]
-                         total_cabify = pos_cabify + neg_cabify + neu_cabify
-                         if (total_cabify != 0):
-                             sizes = [pos_cabify/total_cabify, neg_cabify/total_cabify, neu_cabify/total_cabify]
-                             fig1, ax1 = plt.subplots()
-                             ax1.pie(sizes, labels=labels, autopct='%1.1f%%',shadow=True, startangle=90)
-                             ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
-                             plt.show()
-                         else:
-                            print("\n** Erro ** Dados insuficientes\n")
-                         
-                    elif esc_local == "3":
-                         pos_99pop = resultado[2][0]
-                         neg_99pop = resultado[2][1]
-                         neu_99pop = resultado[2][2]
-                         total_99pop = pos_99pop + neg_99pop + neu_99pop
-                         if (total_99pop != 0):
-                             sizes = [pos_99pop/total_99pop, neg_99pop/total_99pop, neu_99pop/total_99pop]
-                             fig1, ax1 = plt.subplots()
-                             ax1.pie(sizes, labels=labels, autopct='%1.1f%%',shadow=True, startangle=90)
-                             ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
-                             plt.show()
-                         else:
-                            print("\n** Erro ** Dados insuficientes\n")
-                            
-                    elif esc_local == "4":
-                        labels = 'Uber', 'Cabify', '99Pop'
-                        pos_uber = resultado[0][0]
-                        pos_cabify = resultado[1][0]
-                        pos_pop =resultado[2][0]
-                        total_bom = pos_uber + pos_cabify + pos_pop
-                        if total_bom == 0:
-                            print("\n** Erro **\n Dados insuficientes para geração de gráficos")
-                        else:
-                            sizes = [pos_uber/total_bom, pos_cabify/total_bom, pos_pop/total_bom]
-                            # only "explode" the 2nd slice (i.e. 'Hogs')
-                        
-                            fig1, ax1 = plt.subplots()
-                            ax1.pie(sizes, labels=labels, autopct='%1.1f%%',shadow=True, startangle=90)
-                            ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
-                            plt.show()
-                    else:
-                        print("\n** Erro **\n Opcao inválida\n")
-                    
+
+                    graficoBarra(quantidadeTweets(resultado))
+
+                        #####
+                    pos_uber, neg_uber, neu_uber, total_uber, pos_cabify, neg_cabify, neu_cabify, total_cabify, pos_99pop, neg_99pop, neu_99pop, total_99pop, total = quantidadeTweets(resultado)
+                    pos_list = [pos_uber,pos_cabify,pos_99pop]
+                    neg_list = [neg_uber,neg_cabify,neg_99pop]
+                    neu_list = [neu_uber,neu_cabify,neu_99pop]
+
+                    labels_list1,labels_list2,labels_list3=['','',''],['','',''],['','','']
+
+                    if pos_list[0]!=0:
+                        labels_list1[0]='Uber'
+                    if pos_list[1] !=0:
+                        labels_list1[1]='Cabify'
+                    if pos_list[2] !=0:
+                        labels_list1[2]='99Pop'
+
+                    if neg_list[0]!=0:
+                        labels_list2[0]='Uber'
+                    if neg_list[1] !=0:
+                        labels_list2[1]='Cabify'
+                    if neg_list[2] !=0:
+                        labels_list2[2]='99Pop'
+
+                    if neu_list[0]!=0:
+                        labels_list3[0]='Uber'
+                    if neu_list[1] !=0:
+                        labels_list3[1]='Cabify'
+                    if neu_list[2] !=0:
+                        labels_list3[2]='99Pop'
+
+                    fig, eixos = plt.subplots(nrows=1, ncols=3, figsize=(7, 4))
+
+                    pie_1 = eixos[0].pie(pos_list, labels=labels_list1,
+                                         autopct='%1.1f%%', colors=['gray', 'lightskyblue', 'gold'])
+                    eixos[0].set_title('Positivo')
+                    eixos[0].axis('equal')
+
+                    pie_2 = eixos[1].pie(neg_list, labels=labels_list2,
+                                         autopct='%1.1f%%', startangle=50, colors=['gray', 'lightskyblue', 'gold'])
+                    eixos[1].set_title('Negativo')
+                    plt.axis('equal')
+
+                    pie_3 = eixos[2].pie(neu_list, labels=labels_list3,
+                                         autopct='%1.1f%%', startangle=90, colors=['gray', 'lightskyblue', 'gold'])
+                    eixos[2].set_title('Neutro')
+                    plt.axis('equal')
+
+                    plt.subplots_adjust(wspace=1)
+
+                    plt.suptitle(cidade_query.upper())
+                    plt.show()
+
                 else:
-                    print("\n** Erro **\n Numero da cidade escolhida inválido\n")
-                
+                    print("\n** Erro **\n Número de cidade inválido\n")
+
             else:
-                print("Devido ao numero restrito de tweets, nenhuma cidade esta disponivel para analise :( ")
-        elif esc == "3":
-            print("A data deve seguir o padrao: ANO-MES-DIA")
+                print("Devido ao número restrito de tweets com locais, nenhuma cidade está disponível para análise :( ")
+
+
+        elif esc == "3":  # buscar por data
+            print("A data deve seguir o padrão: ANO-MES-DIA")
             esc_data = input("\n>>>>")
+
             resultado = buscar_tweets_data(esc_data)
-            #data = "2017-07-18"
 
-            pos_uber = resultado[0][0]
-            neg_uber = resultado[0][1]
-            neu_uber = resultado[0][2]
+            verificacao_data = esc_data.split("-")
+            if len(verificacao_data[0]) == 4 and len(verificacao_data[1]) == 2 and len(verificacao_data[2]) == 2:
+                try:
+                    int(verificacao_data[0]), int(verificacao_data[1]), int(verificacao_data[2])
+                    pos_uber, neg_uber, neu_uber, total_uber, pos_cabify, neg_cabify, neu_cabify, total_cabify, pos_99pop, neg_99pop, neu_99pop, total_99pop, total = quantidadeTweets(resultado)
 
-            total_uber = pos_uber+neg_uber+neu_uber
+                    if total!=0:
 
-            pos_cabify = resultado[1][0]
-            neg_cabify = resultado[1][1]
-            neu_cabify = resultado[1][2]
+                        dpoints = np.array([['Positivo', 'Uber', pos_uber],
+                                            ['Positivo', 'Cabify', pos_cabify],
+                                            ['Positivo', '99pop', pos_99pop],
+                                            ['Neutro', 'Uber', neu_uber],
+                                            ['Neutro', 'Cabify', neu_cabify],
+                                            ['Neutro', '99pop', neu_99pop],
+                                            ['Negativo', 'Uber', neg_uber],
+                                            ['Negativo', 'Cabify', neg_cabify],
+                                            ['Negativo', '99pop', neg_99pop]])
 
-            total_cabify = pos_cabify+neg_cabify+neu_cabify
+                        fig = plt.figure()
+                        ax = fig.add_subplot(111)
 
-            pos_99pop = resultado[2][0]
-            neg_99pop = resultado[2][1]
-            neu_99pop = resultado[2][2]
+                        barplot(ax, dpoints)
+                        plt.subplots_adjust(bottom=0.20)
+                        plt.show()
 
-            total_99pop = pos_99pop+neg_99pop+neu_99pop
+                    else:
+                        print("\n** Erro ** Não há dados para essa data\n")
+                except:
+                    print("\n** Erro **\n Data inválida\n")
 
-            total = total_uber+total_cabify+total_99pop
+            else:
+                print("\n** Erro **\n Data inválida\n")
 
-            if total==0:
-                print("\n** Erro ** Não há dados para essa data\n")
-                pass
-
-            dpoints = np.array([['Positivo', 'Uber', pos_uber],
-                                ['Positivo', 'Cabify', pos_cabify],
-                                ['Positivo', '99pop', pos_99pop],
-                                ['Neutro', 'Uber', neu_uber],
-                                ['Neutro', 'Cabify', neu_cabify],
-                                ['Neutro', '99pop', neu_99pop],
-                                ['Negativo', 'Uber', neg_uber],
-                                ['Negativo', 'Cabify', neg_cabify],
-                                ['Negativo', '99pop', neg_99pop]])
-
-            fig = plt.figure()
-            ax = fig.add_subplot(111)
-
-            barplot(ax, dpoints)
-            plt.subplots_adjust(bottom=0.20)
-            plt.show()
-
-
-        elif esc == "1":
+        elif esc == "1": #análise geral
             resultado = buscar_tweets()
 
-            pos_uber = resultado[0][0]
-            neg_uber = resultado[0][1]
-            neu_uber = resultado[0][2]
-             
-            pos_cabify = resultado[1][0]
-            neg_cabify = resultado[1][1]
-            neu_cabify = resultado[1][2]
-             
-            pos_99pop = resultado[2][0]
-            neg_99pop = resultado[2][1]
-            neu_99pop = resultado[2][2]
+            pos_uber, neg_uber, neu_uber, total_uber, pos_cabify, neg_cabify, neu_cabify, total_cabify, pos_99pop, neg_99pop, neu_99pop, total_99pop, total = quantidadeTweets(resultado)
 
-            #print(resultado)
             dpoints = np.array([['Positivo', 'Uber',  pos_uber],
                        ['Positivo', 'Cabify', pos_cabify],
                        ['Positivo', '99pop', pos_99pop],
@@ -292,17 +255,17 @@ def menu():
                        ['Negativo', 'Uber', neg_uber],
                        ['Negativo', 'Cabify', neg_cabify],
                        ['Negativo', '99pop', neg_99pop]])
-            
+
             fig = plt.figure()
             ax = fig.add_subplot(111)
-            
 
-                    
+
+
             barplot(ax, dpoints)
             plt.subplots_adjust(bottom=0.20)
             plt.show()
-            
-        elif esc == "4":
+
+        elif esc == "4": # buscar por data e local
              print("A data deve seguir o padrao: ANO-MES-DIA")
              esc_data = input("\n>>>>")
 
@@ -312,31 +275,13 @@ def menu():
                      print(i, "-", cidades[i])
                      nums.append(str(i))
 
-                 esc_local = input("Escolha o numero da cidade a ser analisada: ")
+                 esc_local = input("Escolha o número da cidade a ser analisada: ")
                  if str(esc_local) in nums:
                      cidade_query = cidades[int(esc_local)]
 
                  resultado = buscar_tweets_data_lugar(esc_data,cidade_query)
 
-                 pos_uber = resultado[0][0]
-                 neg_uber = resultado[0][1]
-                 neu_uber = resultado[0][2]
-
-                 total_uber = pos_uber + neg_uber + neu_uber
-
-                 pos_cabify = resultado[1][0]
-                 neg_cabify = resultado[1][1]
-                 neu_cabify = resultado[1][2]
-
-                 total_cabify = pos_cabify + neg_cabify + neu_cabify
-
-                 pos_99pop = resultado[2][0]
-                 neg_99pop = resultado[2][1]
-                 neu_99pop = resultado[2][2]
-
-                 total_99pop = pos_99pop + neg_99pop + neu_99pop
-
-                 total = total_uber + total_cabify + total_99pop
+                 pos_uber, neg_uber, neu_uber, total_uber, pos_cabify, neg_cabify, neu_cabify, total_cabify, pos_99pop, neg_99pop, neu_99pop, total_99pop, total = quantidadeTweets(resultado)
 
                  if total == 0:
                      print("\n** Erro ** Não há dados para essa data\n")
@@ -359,47 +304,8 @@ def menu():
                  plt.subplots_adjust(bottom=0.20)
                  plt.show()
 
-        elif esc == "5":
-             print("Método em construção. Tente novamente mais tarde.")
-             esc_sentimento = input("Escolha o sentimento que deseja visualizar: \n1 - Positivo\n2 - Negativo\n3 - Neutro\n >>>>")
-
-             resultado = buscar_tweets()
-
-             labels = 'Uber', 'Cabify', '99Pop'
-
-             if esc_sentimento==1:
-                 #positivo
-                 pos_uber = resultado[0][0]
-                 pos_cabify = resultado[1][0]
-                 pos_99pop = resultado[2][0]
-                 total_pos = pos_uber + pos_99pop + pos_cabify
-                 if (total_pos != 0):
-                     sizes = [pos_uber / total_pos, pos_99pop / total_pos, pos_cabify / total_pos]
-                     fig1, ax1 = plt.subplots()
-                     ax1.pie(sizes, labels=labels, autopct='%1.1f%%', shadow=True, startangle=90)
-                     ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
-                     plt.show()
-             elif esc_sentimento==2:
-                 #negativo
-                 neg_uber = resultado[0][1]
-                 neg_99pop = resultado[2][1]
-                 neg_cabify = resultado[1][1]
-                 total_neg = neg_uber + neg_99pop + neg_cabify
-                 pass
-             elif esc_sentimento==3:
-
-                 neu_uber = resultado[0][2]
-                 neu_cabify = resultado[1][2]
-                 neu_99pop = resultado[2][2]
-                 total_neu = neu_99pop + neu_cabify + neu_uber
-                 pass
-                 #neutro
-             pass
-             #print("A data devera seguir o padrao: ANO-MES-DIA")
-             #esc_data = input("\n>>>>")
-             #resultado = buscar_tweets_data_lugar(esc_data,local)
-             #help
-            
+        else:
+            print("\n** Erro ** \n Opção inválida\n")
     return
 
 
@@ -443,6 +349,25 @@ def barplot(ax, dpoints):
     # Add a legend
     handles, labels = ax.get_legend_handles_labels()
     ax.legend(handles[::-1], labels[::-1], loc='upper left')
-
 menu()
+
+
+def graficoBarra(pos_uber,neg_uber,neu_uber,total_uber,pos_cabify,neg_cabify,neu_cabify,total_cabify,pos_99pop,neg_99pop,neu_99pop,total_99pop,total):
+    dpoints = np.array([['Positivo', 'Uber', pos_uber],
+                        ['Positivo', 'Cabify', pos_cabify],
+                        ['Positivo', '99pop', pos_99pop],
+                        ['Neutro', 'Uber', neu_uber],
+                        ['Neutro', 'Cabify', neu_cabify],
+                        ['Neutro', '99pop', neu_99pop],
+                        ['Negativo', 'Uber', neg_uber],
+                        ['Negativo', 'Cabify', neg_cabify],
+                        ['Negativo', '99pop', neg_99pop]])
+
+    fig = plt.figure()
+    ax = fig.add_subplot(111)
+
+    barplot(ax, dpoints)
+    plt.subplots_adjust(bottom=0.20)
+    plt.grid()
+    plt.show()
 
