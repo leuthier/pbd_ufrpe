@@ -58,7 +58,9 @@ def quantidadeTweets(resultado):
 
     total = total_uber+total_99pop+total_cabify
 
-    return pos_uber, neg_uber, neu_uber, total_uber, pos_cabify, neg_cabify, neu_cabify, total_cabify, pos_99pop, neg_99pop, neu_99pop, total_99pop, total
+    valores = [pos_uber, neg_uber, neu_uber, total_uber, pos_cabify, neg_cabify, neu_cabify, total_cabify, pos_99pop, neg_99pop, neu_99pop, total_99pop, total]
+
+    return valores
 
 def buscar_tweets_local(local):
     resultado = [[], [], []]
@@ -129,7 +131,7 @@ def menu():
             esc2 = esc2.lower()
             if esc2 == "s":
                 webbrowser.open_new("https://github.com/leuthier/pbd_ufrpe")
-            print("Agradecemos a visita.")
+            print("\nAgradecemos a visita.")
             break
         elif esc == "2":  #buscar por local
             if buscar_locais() != None:
@@ -141,60 +143,17 @@ def menu():
                 if str(esc_local) in nums:
                     cidade_query = cidades[int(esc_local)]
                     resultado = buscar_tweets_local(cidade_query)
+                    qtdTweets = quantidadeTweets(resultado)
 
-                    graficoBarra(quantidadeTweets(resultado))
+                    graficoBarra(qtdTweets)
 
                         #####
-                    pos_uber, neg_uber, neu_uber, total_uber, pos_cabify, neg_cabify, neu_cabify, total_cabify, pos_99pop, neg_99pop, neu_99pop, total_99pop, total = quantidadeTweets(resultado)
-                    pos_list = [pos_uber,pos_cabify,pos_99pop]
-                    neg_list = [neg_uber,neg_cabify,neg_99pop]
-                    neu_list = [neu_uber,neu_cabify,neu_99pop]
 
-                    labels_list1,labels_list2,labels_list3=['','',''],['','',''],['','','']
+                    pos_list = [qtdTweets[0],qtdTweets[4],qtdTweets[8]]
+                    neg_list = [qtdTweets[1],qtdTweets[5],qtdTweets[9]]
+                    neu_list = [qtdTweets[2],qtdTweets[6],qtdTweets[10]]
 
-                    if pos_list[0]!=0:
-                        labels_list1[0]='Uber'
-                    if pos_list[1] !=0:
-                        labels_list1[1]='Cabify'
-                    if pos_list[2] !=0:
-                        labels_list1[2]='99Pop'
-
-                    if neg_list[0]!=0:
-                        labels_list2[0]='Uber'
-                    if neg_list[1] !=0:
-                        labels_list2[1]='Cabify'
-                    if neg_list[2] !=0:
-                        labels_list2[2]='99Pop'
-
-                    if neu_list[0]!=0:
-                        labels_list3[0]='Uber'
-                    if neu_list[1] !=0:
-                        labels_list3[1]='Cabify'
-                    if neu_list[2] !=0:
-                        labels_list3[2]='99Pop'
-
-                    fig, eixos = plt.subplots(nrows=1, ncols=3, figsize=(7, 4))
-
-                    pie_1 = eixos[0].pie(pos_list, labels=labels_list1,
-                                         autopct='%1.1f%%', colors=['gray', 'lightskyblue', 'gold'])
-                    eixos[0].set_title('Positivo')
-                    eixos[0].axis('equal')
-
-                    pie_2 = eixos[1].pie(neg_list, labels=labels_list2,
-                                         autopct='%1.1f%%', startangle=50, colors=['gray', 'lightskyblue', 'gold'])
-                    eixos[1].set_title('Negativo')
-                    plt.axis('equal')
-
-                    pie_3 = eixos[2].pie(neu_list, labels=labels_list3,
-                                         autopct='%1.1f%%', startangle=90, colors=['gray', 'lightskyblue', 'gold'])
-                    eixos[2].set_title('Neutro')
-                    plt.axis('equal')
-
-                    plt.subplots_adjust(wspace=1)
-
-                    plt.suptitle(cidade_query.upper())
-                    plt.show()
-
+                    graficoPizza(pos_list,neg_list,neu_list,cidade_query)
                 else:
                     print("\n** Erro **\n Número de cidade inválido\n")
 
@@ -203,7 +162,7 @@ def menu():
 
 
         elif esc == "3":  # buscar por data
-            print("A data deve seguir o padrão: ANO-MES-DIA")
+            print("A data deve seguir o padrão: AAAA-MM-DD")
             esc_data = input("\n>>>>")
 
             resultado = buscar_tweets_data(esc_data)
@@ -212,26 +171,12 @@ def menu():
             if len(verificacao_data[0]) == 4 and len(verificacao_data[1]) == 2 and len(verificacao_data[2]) == 2:
                 try:
                     int(verificacao_data[0]), int(verificacao_data[1]), int(verificacao_data[2])
-                    pos_uber, neg_uber, neu_uber, total_uber, pos_cabify, neg_cabify, neu_cabify, total_cabify, pos_99pop, neg_99pop, neu_99pop, total_99pop, total = quantidadeTweets(resultado)
+                    qtdTweets = quantidadeTweets(resultado)
+                    total = qtdTweets[12]
 
                     if total!=0:
 
-                        dpoints = np.array([['Positivo', 'Uber', pos_uber],
-                                            ['Positivo', 'Cabify', pos_cabify],
-                                            ['Positivo', '99pop', pos_99pop],
-                                            ['Neutro', 'Uber', neu_uber],
-                                            ['Neutro', 'Cabify', neu_cabify],
-                                            ['Neutro', '99pop', neu_99pop],
-                                            ['Negativo', 'Uber', neg_uber],
-                                            ['Negativo', 'Cabify', neg_cabify],
-                                            ['Negativo', '99pop', neg_99pop]])
-
-                        fig = plt.figure()
-                        ax = fig.add_subplot(111)
-
-                        barplot(ax, dpoints)
-                        plt.subplots_adjust(bottom=0.20)
-                        plt.show()
+                        graficoBarra(qtdTweets)
 
                     else:
                         print("\n** Erro ** Não há dados para essa data\n")
@@ -244,29 +189,11 @@ def menu():
         elif esc == "1": #análise geral
             resultado = buscar_tweets()
 
-            pos_uber, neg_uber, neu_uber, total_uber, pos_cabify, neg_cabify, neu_cabify, total_cabify, pos_99pop, neg_99pop, neu_99pop, total_99pop, total = quantidadeTweets(resultado)
-
-            dpoints = np.array([['Positivo', 'Uber',  pos_uber],
-                       ['Positivo', 'Cabify', pos_cabify],
-                       ['Positivo', '99pop', pos_99pop],
-                       ['Neutro', 'Uber', neu_uber],
-                       ['Neutro', 'Cabify', neu_cabify],
-                       ['Neutro', '99pop', neu_99pop],
-                       ['Negativo', 'Uber', neg_uber],
-                       ['Negativo', 'Cabify', neg_cabify],
-                       ['Negativo', '99pop', neg_99pop]])
-
-            fig = plt.figure()
-            ax = fig.add_subplot(111)
-
-
-
-            barplot(ax, dpoints)
-            plt.subplots_adjust(bottom=0.20)
-            plt.show()
+            qtdTweets = quantidadeTweets(resultado)
+            graficoBarra(qtdTweets)
 
         elif esc == "4": # buscar por data e local
-             print("A data deve seguir o padrao: ANO-MES-DIA")
+             print("A data deve seguir o padrão: AAAA-MM-DD")
              esc_data = input("\n>>>>")
 
              if buscar_locais() != None:
@@ -281,28 +208,14 @@ def menu():
 
                  resultado = buscar_tweets_data_lugar(esc_data,cidade_query)
 
-                 pos_uber, neg_uber, neu_uber, total_uber, pos_cabify, neg_cabify, neu_cabify, total_cabify, pos_99pop, neg_99pop, neu_99pop, total_99pop, total = quantidadeTweets(resultado)
+                 qtdTweets = quantidadeTweets(resultado)
+                 total = qtdTweets[12]
 
                  if total == 0:
                      print("\n** Erro ** Não há dados para essa data\n")
                      pass
 
-                 dpoints = np.array([['Positivo', 'Uber', pos_uber],
-                                     ['Positivo', 'Cabify', pos_cabify],
-                                     ['Positivo', '99pop', pos_99pop],
-                                     ['Neutro', 'Uber', neu_uber],
-                                     ['Neutro', 'Cabify', neu_cabify],
-                                     ['Neutro', '99pop', neu_99pop],
-                                     ['Negativo', 'Uber', neg_uber],
-                                     ['Negativo', 'Cabify', neg_cabify],
-                                     ['Negativo', '99pop', neg_99pop]])
-
-                 fig = plt.figure()
-                 ax = fig.add_subplot(111)
-
-                 barplot(ax, dpoints)
-                 plt.subplots_adjust(bottom=0.20)
-                 plt.show()
+                 graficoBarra(qtdTweets)
 
         else:
             print("\n** Erro ** \n Opção inválida\n")
@@ -349,10 +262,12 @@ def barplot(ax, dpoints):
     # Add a legend
     handles, labels = ax.get_legend_handles_labels()
     ax.legend(handles[::-1], labels[::-1], loc='upper left')
-menu()
 
+def graficoBarra(valores):
+    pos_uber,neg_uber,neu_uber = valores[0],valores[1],valores[2]
+    pos_cabify, neg_cabify,neu_cabify = valores[4],valores[5],valores[6]
+    pos_99pop,neg_99pop,neu_99pop = valores[8],valores[9],valores[10]
 
-def graficoBarra(pos_uber,neg_uber,neu_uber,total_uber,pos_cabify,neg_cabify,neu_cabify,total_cabify,pos_99pop,neg_99pop,neu_99pop,total_99pop,total):
     dpoints = np.array([['Positivo', 'Uber', pos_uber],
                         ['Positivo', 'Cabify', pos_cabify],
                         ['Positivo', '99pop', pos_99pop],
@@ -368,6 +283,53 @@ def graficoBarra(pos_uber,neg_uber,neu_uber,total_uber,pos_cabify,neg_cabify,neu
 
     barplot(ax, dpoints)
     plt.subplots_adjust(bottom=0.20)
-    plt.grid()
     plt.show()
 
+def graficoPizza(pos_list,neg_list,neu_list,cidade):
+    labels_list1, labels_list2, labels_list3 = ['', '', ''], ['', '', ''], ['', '', '']
+
+    if pos_list[0] != 0:
+        labels_list1[0] = 'Uber'
+    if pos_list[1] != 0:
+        labels_list1[1] = 'Cabify'
+    if pos_list[2] != 0:
+        labels_list1[2] = '99Pop'
+
+    if neg_list[0] != 0:
+        labels_list2[0] = 'Uber'
+    if neg_list[1] != 0:
+        labels_list2[1] = 'Cabify'
+    if neg_list[2] != 0:
+        labels_list2[2] = '99Pop'
+
+    if neu_list[0] != 0:
+        labels_list3[0] = 'Uber'
+    if neu_list[1] != 0:
+        labels_list3[1] = 'Cabify'
+    if neu_list[2] != 0:
+        labels_list3[2] = '99Pop'
+
+    fig, eixos = plt.subplots(nrows=1, ncols=3, figsize=(7, 4))
+
+    pie_1 = eixos[0].pie(pos_list, labels=labels_list1,
+                         autopct='%1.1f%%', colors=['gray', 'lightskyblue', 'gold'])
+    eixos[0].set_title('Positivo')
+    eixos[0].axis('equal')
+
+    pie_2 = eixos[1].pie(neg_list, labels=labels_list2,
+                         autopct='%1.1f%%', startangle=50, colors=['gray', 'lightskyblue', 'gold'])
+    eixos[1].set_title('Negativo')
+    plt.axis('equal')
+
+    pie_3 = eixos[2].pie(neu_list, labels=labels_list3,
+                         autopct='%1.1f%%', startangle=90, colors=['gray', 'lightskyblue', 'gold'])
+    eixos[2].set_title('Neutro')
+    plt.axis('equal')
+
+    plt.subplots_adjust(wspace=1)
+
+    plt.suptitle(cidade.upper())
+    plt.show()
+
+
+menu()
