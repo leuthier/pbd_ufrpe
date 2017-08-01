@@ -12,7 +12,7 @@ cabify = [[], [], []]
 pop99 = [[], [], []]
 
 def buscar_locais():
-    resposta = dao.Busca_SQL("select nome_lugar from voudeque.lugar;")
+    resposta = dao.Busca_SQL("select DISTINCT nome_lugar from voudeque.lugar;")
     cidades = []
     for i in resposta:
         cidades.append(i[0])
@@ -212,10 +212,10 @@ def menu():
                             ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
                             plt.show()
                     else:
-                        print("\n** Erro **\n Opcao invalida\n")
+                        print("\n** Erro **\n Opcao inválida\n")
                     
                 else:
-                    print("\n** Erro **\n Numero da cidade escolhida invalido\n")
+                    print("\n** Erro **\n Numero da cidade escolhida inválido\n")
                 
             else:
                 print("Devido ao numero restrito de tweets, nenhuma cidade esta disponivel para analise :( ")
@@ -269,6 +269,7 @@ def menu():
 
         elif esc == "1":
             resultado = buscar_tweets()
+
             pos_uber = resultado[0][0]
             neg_uber = resultado[0][1]
             neu_uber = resultado[0][2]
@@ -280,7 +281,8 @@ def menu():
             pos_99pop = resultado[2][0]
             neg_99pop = resultado[2][1]
             neu_99pop = resultado[2][2]
-            
+
+            print(resultado)
             dpoints = np.array([['Positivo', 'Uber',  pos_uber],
                        ['Positivo', 'Cabify', pos_cabify],
                        ['Positivo', '99pop', pos_99pop],
@@ -359,6 +361,39 @@ def menu():
 
         elif esc == "5":
              print("Método em construção. Tente novamente mais tarde.")
+             esc_sentimento = input("Escolha o sentimento que deseja visualizar: \n1 - Positivo\n2 - Negativo\n3 - Neutro\n >>>>")
+
+             resultado = buscar_tweets()
+
+             labels = 'Uber', 'Cabify', '99Pop'
+
+             if esc_sentimento==1:
+                 #positivo
+                 pos_uber = resultado[0][0]
+                 pos_cabify = resultado[1][0]
+                 pos_99pop = resultado[2][0]
+                 total_pos = pos_uber + pos_99pop + pos_cabify
+                 if (total_pos != 0):
+                     sizes = [pos_uber / total_pos, pos_99pop / total_pos, pos_cabify / total_pos]
+                     fig1, ax1 = plt.subplots()
+                     ax1.pie(sizes, labels=labels, autopct='%1.1f%%', shadow=True, startangle=90)
+                     ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+                     plt.show()
+             elif esc_sentimento==2:
+                 #negativo
+                 neg_uber = resultado[0][1]
+                 neg_99pop = resultado[2][1]
+                 neg_cabify = resultado[1][1]
+                 total_neg = neg_uber + neg_99pop + neg_cabify
+                 pass
+             elif esc_sentimento==3:
+
+                 neu_uber = resultado[0][2]
+                 neu_cabify = resultado[1][2]
+                 neu_99pop = resultado[2][2]
+                 total_neu = neu_99pop + neu_cabify + neu_uber
+                 pass
+                 #neutro
              pass
              #print("A data devera seguir o padrao: ANO-MES-DIA")
              #esc_data = input("\n>>>>")
