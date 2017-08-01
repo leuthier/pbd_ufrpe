@@ -245,7 +245,7 @@ try:
     id_lugar = dao.Busca_SQL("select id from voudeque.lugar where lugar.nome_lugar = 'são bernardo do campo';")[0][0]
     str_id_usuario = str(id_usuario)
     str_id_lugar = str(id_lugar)
-    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(891770237183569920, 'Meu cupom :uberrgomes: te dá R$ 20 de desconto em suas primeiras viagens (10 cada) com @Uber_Brasil @Uber #uber #desconto #cupom #promocao', '2017-07-30 21:19:27', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(891770237183569920, 'Meu cupom ♥:uberrgomes: te dá R$ 20 de desconto em suas primeiras viagens (10 cada) com @Uber_Brasil @Uber #uber #desconto #cupom #promocao', '2017-07-30 21:19:27', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
     dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(891770237183569920, 1);")
     dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uber', '1');")
     dao.Executa_SQL("insert into voudeque.hashtag(texto) values('desconto');")

@@ -1,11 +1,13 @@
+# -*- coding: utf-8 -*-
 import pymysql
 
 #cria o esquema VouDeQue caso nao exista e se conecta a ele
 def ConectarBanco():
     servidor, usuario, senha, esquema = '127.0.0.1', 'root', '', 'voudeque'
     try:
-        db = pymysql.connect(servidor, usuario, senha, esquema)
+        db = pymysql.connect(servidor, usuario, senha, esquema, use_unicode=True)
         cursor = db.cursor()
+
         return cursor, db
     except:
         db = pymysql.connect(servidor, usuario, senha, '')
@@ -14,6 +16,7 @@ def ConectarBanco():
 
         db = pymysql.connect(servidor, usuario, senha, esquema)
         cursor = db.cursor()
+
         return cursor, db
 
 cursor,db = ConectarBanco()

@@ -282,7 +282,7 @@ def menu():
             neg_99pop = resultado[2][1]
             neu_99pop = resultado[2][2]
 
-            print(resultado)
+            #print(resultado)
             dpoints = np.array([['Positivo', 'Uber',  pos_uber],
                        ['Positivo', 'Cabify', pos_cabify],
                        ['Positivo', '99pop', pos_99pop],
