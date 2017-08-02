@@ -125,7 +125,10 @@ def pegarTweetsNovos():
                         dao.Executa_SQL("insert into voudeque.tweet_local(id_tweet, id_local) values('" + str(id_tweet) + ", " + str(id_lugar) + "');")
                 except:
                     print("Exception")
-
+            dao.Executa_SQL(
+                'DELETE FROM voudeque.usuario WHERE (id) IN (select * from(select usuario.id from voudeque.usuario left join voudeque.tweet on voudeque.usuario.id = voudeque.tweet.id_usuario where voudeque.tweet.id_usuario is null) as p);')
+            dao.Executa_SQL(
+                'DELETE FROM voudeque.lugar WHERE (id) IN (select * from(select lugar.id from voudeque.lugar left join voudeque.tweet on voudeque.lugar.id = voudeque.tweet.id_lugar where voudeque.tweet.id_lugar is null) as p);')
 
 
 
@@ -138,7 +141,7 @@ def iniciar(tempo):
 
 
 
-iniciar(20 * 60)
+iniciar(40)
 
 
 

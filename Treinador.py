@@ -130,6 +130,8 @@ def buscarTweets(query, quantidade):
                 arq.write(');")\n')
 
         arq.write("except:\n    print('Erro')\n")
+    arq.write("dao.Executa_SQL('DELETE FROM voudeque.usuario WHERE (id) IN (select * from(select usuario.id from voudeque.usuario left join voudeque.tweet on voudeque.usuario.id = voudeque.tweet.id_usuario where voudeque.tweet.id_usuario is null) as p);')\n")
+    arq.write("dao.Executa_SQL('DELETE FROM voudeque.lugar WHERE (id) IN (select * from(select lugar.id from voudeque.lugar left join voudeque.tweet on voudeque.lugar.id = voudeque.tweet.id_lugar where voudeque.tweet.id_lugar is null) as p);')\n")
     arq.close()
 
 buscarTweets("#cabify",5)
