@@ -80,7 +80,6 @@ def buscar_tweets_local(local):
     return resultado
 
 def buscar_tweets_data(data):
-
     resultado = [[], [], []]
 
     resultado[0].append(dao.Busca_SQL("select count(*) from voudeque.tweet, voudeque.sentimento, voudeque.marca, voudeque.tweet_marca where tweet.id_sentimento = sentimento.id and sentimento.classe = 'Positivo'  and tweet.dataHora like '" + data + "%' and tweet_marca.id_marca = marca.id and tweet_marca.id_tweet = tweet.id and marca.nome = 'uber';")[0][0])
@@ -154,6 +153,7 @@ def menu():
                     neu_list = [qtdTweets[2],qtdTweets[6],qtdTweets[10]]
 
                     graficoPizza(pos_list,neg_list,neu_list,cidade_query)
+
                 else:
                     print("\n** Erro **\n Número de cidade inválido\n")
 
@@ -175,7 +175,6 @@ def menu():
                     total = qtdTweets[12]
 
                     if total!=0:
-
                         graficoBarra(qtdTweets)
 
                     else:
@@ -193,29 +192,40 @@ def menu():
             graficoBarra(qtdTweets)
 
         elif esc == "4": # buscar por data e local
-             print("A data deve seguir o padrão: AAAA-MM-DD")
-             esc_data = input("\n>>>>")
+            print("A data deve seguir o padrão: AAAA-MM-DD")
+            esc_data = input("\n>>>>")
 
-             if buscar_locais() != None:
-                 nums = []
-                 for i in range(len(cidades)):
-                     print(i, "-", cidades[i])
-                     nums.append(str(i))
+            verificacao_data = esc_data.split("-")
+            if len(verificacao_data[0]) == 4 and len(verificacao_data[1]) == 2 and len(verificacao_data[2]) == 2:
+                try:
+                    int(verificacao_data[0]), int(verificacao_data[1]), int(verificacao_data[2])
 
-                 esc_local = input("Escolha o número da cidade a ser analisada: ")
-                 if str(esc_local) in nums:
-                     cidade_query = cidades[int(esc_local)]
+                    if buscar_locais() != None:
+                        nums = []
+                        for i in range(len(cidades)):
+                            print(i, "-", cidades[i])
+                            nums.append(str(i))
 
-                 resultado = buscar_tweets_data_lugar(esc_data,cidade_query)
+                        esc_local = input("Escolha o número da cidade a ser analisada: ")
+                        if str(esc_local) in nums:
+                            cidade_query = cidades[int(esc_local)]
 
-                 qtdTweets = quantidadeTweets(resultado)
-                 total = qtdTweets[12]
+                        resultado = buscar_tweets_data_lugar(esc_data, cidade_query)
 
-                 if total == 0:
-                     print("\n** Erro ** Não há dados para essa data\n")
-                     pass
+                        qtdTweets = quantidadeTweets(resultado)
 
-                 graficoBarra(qtdTweets)
+                        graficoBarra(qtdTweets)
+
+                    else:
+                        print("Devido ao número restrito de tweets com locais, nenhuma cidade está disponível para análise :( ")
+
+
+                except:
+                    print("\n** Erro **\n Data inválida\n")
+
+            else:
+                print("\n** Erro **\n Data inválida\n")
+
 
         else:
             print("\n** Erro ** \n Opção inválida\n")
