@@ -100,16 +100,7 @@ def pegarTweetsNovos():
                     else:
                         dao.Executa_SQL("insert into voudeque.usuario(nome, username) values('" + str(nome_usuario) + "', '" + str(screen_name_usuario) + "');")
                     id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = '"+ str(nome_usuario) +"';")[0][0]
-                    dao.Executa_SQL(
-                            "insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario) values('" + str(id_tweet) + "', '" + str(texto_tweet) + "', '" + str(created_at_tweet) + "', '" + str(sentimento)
-                            + "', '" + str(id_usuario) +  "');")
-                    dao.Executa_SQL(
-                            "insert into voudeque.tweet_marca(id_tweet, id_marca) values('" + str(id_tweet) + "', '" + str(marca) + "');")
-                    for j1 in hashtags:
-                        if marca in j1.get("text").lower():
-                            dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('" + str(j.get("text").lower()) + "', '" + str(id_marca) + "');")
-                        else:
-                            dao.Executa_SQL("insert into voudeque.hashtag(texto) values('" + str(j.get("text").lower()) + "');")
+                    id_lugar = "null"
                     if (twe.place != None):
                         coordenadas = twe.place.bounding_box.coordinates[0][0]
                         local = geolocator.reverse(query=str(coordenadas[1]) + ", " + str(coordenadas[0]),
@@ -122,7 +113,17 @@ def pegarTweetsNovos():
                         id_lugar = dao.Busca_SQL("select id from voudeque.lugar where nome_lugar = '" + str(cidade).lower() + "'" + " and latitude = " + "'" + str(
                             coordenadas[1]) + "'" + "and longitude = " + "'" + str(coordenadas[0]) + "';")[0][0]
 
-                        dao.Executa_SQL("insert into voudeque.tweet_local(id_tweet, id_local) values('" + str(id_tweet) + ", " + str(id_lugar) + "');")
+                    dao.Executa_SQL(
+                            "insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values('" + str(id_tweet) + "', '" + str(texto_tweet) + "', '" + str(created_at_tweet) + "', '" + str(sentimento)
+                            + "', '" + str(id_usuario) + "', " + str(id_lugar) + ");")
+                    dao.Executa_SQL(
+                            "insert into voudeque.tweet_marca(id_tweet, id_marca) values('" + str(id_tweet) + "', '" + str(marca) + "');")
+                    for j1 in hashtags:
+                        if marca in j1.get("text").lower():
+                            dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('" + str(j.get("text").lower()) + "', '" + str(id_marca) + "');")
+                        else:
+                            dao.Executa_SQL("insert into voudeque.hashtag(texto) values('" + str(j.get("text").lower()) + "');")
+
                 except:
                     print("Exception")
             dao.Executa_SQL(
