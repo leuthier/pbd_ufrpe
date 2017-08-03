@@ -1,4 +1,1764 @@
 import persistencia.DataBase as dao
+
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Cabify PoA', 'CabifyPoA', 'Porto Alegre, Brasil');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Cabify PoA';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892928104133513216, 'Siga/Curta nossos perfis: . 🚗 Twitter: https://t.co/1B59U1HWH7 . 🚗 Facebook: https://t.co/sNzhLhIZnv . #Cabify #PoA… https://t.co/xFfMxUty69', '2017-08-03 02:00:24', '3', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892928104133513216, 2);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('cabify', '2');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('poa');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Praia do Pepê', 'Praiadopepe', 'Rio de Janeiro');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Praia do Pepê';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892915496248627201, 'Concorrente do #Uber, #Cabify promete briga acirrada. https://t.co/anlrh4obBO', '2017-08-03 01:10:18', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892915496248627201, 2);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('uber');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('cabify', '2');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Cabify PoA', 'CabifyPoA', 'Porto Alegre, Brasil');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Cabify PoA';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892913042958286849, 'Cabify e Panvel levam e buscam você gratuitamente pra doar sangue em POA. . Saiba mais 👉 https://t.co/3FngKpEnq3 .… https://t.co/COpNhesZYQ', '2017-08-03 01:00:33', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892913042958286849, 2);")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Cabify PoA', 'CabifyPoA', 'Porto Alegre, Brasil');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Cabify PoA';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892897893287428097, 'Desconto 50% no Cabify PoA 🚘 Código 👉 INGREDIENTE . ⚠️ Só p/ novos usuários. 📌 Válidade até: 15/12. . #Cabify #PoA… https://t.co/wfRwFOKxqD', '2017-08-03 00:00:21', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892897893287428097, 2);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('cabify', '2');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('poa');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Cabify PoA', 'CabifyPoA', 'Porto Alegre, Brasil');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Cabify PoA';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892882761790443524, 'Receba R$15 de desconto em sua 1ª viagem utilizando o código: 👉 ZENELIT1 ou faça o cadastro no link:… https://t.co/fbKv1C10qu', '2017-08-02 23:00:14', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892882761790443524, 2);")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username) values('Daniel  Leonardo', 'djleonardofilho');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Daniel  Leonardo';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892881755572666368, '#Cabify oferece viagens de helicóptero em SP, um ano após testes do #Uber    Itaim Bibi a Guarulhos: R$ 500 reais.… https://t.co/K6oWxBTtsU', '2017-08-02 22:56:14', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892881755572666368, 2);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('cabify', '2');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('uber');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Victoria', 'Vic_Walker', 'São Paulo, Brasil');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Victoria';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892871415845842945, 'Precisa ir a algum lugar e está sem dinheiro? Vai de #Cabify com código VICTORIAM124 e ganhe R$15 pra usar!… https://t.co/UNnzRiFGAZ', '2017-08-02 22:15:08', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892871415845842945, 2);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('cabify', '2');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Cabify PoA', 'CabifyPoA', 'Porto Alegre, Brasil');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Cabify PoA';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892867681149476865, 'Ação da Cabify com o @governo_rs está sendo um sucesso: já foram + de 30 mil peças arrecadadas!  👉… https://t.co/ANtPK1aXz5', '2017-08-02 22:00:18', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892867681149476865, 2);")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Cabify PoA', 'CabifyPoA', 'Porto Alegre, Brasil');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Cabify PoA';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892852619085045761, 'Desconto 15% no Cabify #PoA 🚘 Código 👉 CABIBR1425 . ⚠️ Pra quem ainda não usou 📌 Válido: 31/12 . #Cabify https://t.co/mRvhhqUNZ5', '2017-08-02 21:00:27', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892852619085045761, 2);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('poa');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('cabify', '2');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Mauricio Oliveira', 'aventureiros', 'Rio de Janeiro - RJ');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Mauricio Oliveira';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892845079962034176, 'Assim como eu, use #Cabify e ganhe R$20,00 na sua primeira viagem . Registre-se aqui: https://t.co/MKGgKWexbD', '2017-08-02 20:30:29', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892845079962034176, 2);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('cabify', '2');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Cabify PoA', 'CabifyPoA', 'Porto Alegre, Brasil');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Cabify PoA';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892837620363014144, 'Siga/Curta nossos perfis: . 🚗 Twitter: https://t.co/1B59U1HWH7 . 🚗 Facebook: https://t.co/sNzhLhIZnv . #Cabify #PoA… https://t.co/EK93hoq8KF', '2017-08-02 20:00:51', '3', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892837620363014144, 2);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('cabify', '2');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('poa');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Cabify PoA', 'CabifyPoA', 'Porto Alegre, Brasil');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Cabify PoA';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892822605723561984, 'Cabify e Panvel levam e buscam você gratuitamente pra doar sangue em POA. . Saiba mais 👉 https://t.co/3FngKpEnq3 .… https://t.co/fexQ7O9NEM', '2017-08-02 19:01:11', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892822605723561984, 2);")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Cabify PoA', 'CabifyPoA', 'Porto Alegre, Brasil');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Cabify PoA';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892807325421056010, 'Desconto 50% no Cabify PoA 🚘 Código 👉 INGREDIENTE . ⚠️ Só p/ novos usuários. 📌 Válidade até: 15/12. . #Cabify #PoA… https://t.co/3T0lezGyOg', '2017-08-02 18:00:28', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892807325421056010, 2);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('cabify', '2');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('poa');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Transponster', 'alvaroleme', 'São Paulo, SP');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Transponster';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892805771959906310, 'quer uma água? quer bala? ar tá bom? rádio de preferência?   Me sinto no De Frente com Gabi #Cabify', '2017-08-02 17:54:18', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892805771959906310, 2);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('cabify', '2');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Cabify PoA', 'CabifyPoA', 'Porto Alegre, Brasil');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Cabify PoA';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892792200454692864, 'Receba R$15 de desconto em sua 1ª viagem utilizando o código: 👉 ZENELIT1 ou faça o cadastro no link:… https://t.co/5uC5kyXOn0', '2017-08-02 17:00:22', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892792200454692864, 2);")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Hená Deslandes', 'henadeslandes', 'São Paulo');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Hená Deslandes';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892791636270489600, 'Uma delícia chamada entrar no #Cabify e a #kissfm estar mandando um #ramones 🤘', '2017-08-02 16:58:08', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892791636270489600, 2);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('cabify', '2');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('kissfm');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('ramones');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Cabify PoA', 'CabifyPoA', 'Porto Alegre, Brasil');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Cabify PoA';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892777137102622720, 'Ação da Cabify com o @governo_rs está sendo um sucesso: já foram + de 30 mil peças arrecadadas!  👉… https://t.co/k1RMw5mLTH', '2017-08-02 16:00:31', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892777137102622720, 2);")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Cabify PoA', 'CabifyPoA', 'Porto Alegre, Brasil');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Cabify PoA';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892761995174457344, 'Desconto 15% no Cabify #PoA 🚘 Código 👉 CABIBR1425 . ⚠️ Pra quem ainda não usou 📌 Válido: 31/12 . #Cabify https://t.co/y4kV1mMq5L', '2017-08-02 15:00:21', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892761995174457344, 2);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('poa');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('cabify', '2');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Cabify PoA', 'CabifyPoA', 'Porto Alegre, Brasil');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Cabify PoA';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892747140027625472, 'Siga/Curta nossos perfis: . 🚗 Twitter: https://t.co/1B59U1HWH7 . 🚗 Facebook: https://t.co/sNzhLhIZnv . #Cabify #PoA… https://t.co/LmLTKQbu2G', '2017-08-02 14:01:19', '3', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892747140027625472, 2);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('cabify', '2');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('poa');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Mauricio Oliveira', 'aventureiros', 'Rio de Janeiro - RJ');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Mauricio Oliveira';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892746866181500929, 'Ganhe R$20,00 na sua primeira corrida de #Cabify usando o código mauricioo322', '2017-08-02 14:00:13', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892746866181500929, 2);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('cabify', '2');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Cabify PoA', 'CabifyPoA', 'Porto Alegre, Brasil');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Cabify PoA';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892732068010094592, 'Cabify e Panvel levam e buscam você gratuitamente pra doar sangue em POA. . Saiba mais 👉 https://t.co/3FngKpEnq3 .… https://t.co/6FKeoUFNc3', '2017-08-02 13:01:25', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892732068010094592, 2);")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Cabify PoA', 'CabifyPoA', 'Porto Alegre, Brasil');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Cabify PoA';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892716679343599616, 'Desconto 50% no Cabify PoA 🚘 Código 👉 INGREDIENTE . ⚠️ Só p/ novos usuários. 📌 Válidade até: 15/12. . #Cabify #PoA… https://t.co/XkPSLln6i3', '2017-08-02 12:00:16', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892716679343599616, 2);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('cabify', '2');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('poa');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Fabio Bobbio', 'fabiobob', 'Vitória-ES');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Fabio Bobbio';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892712571584860160, '#Cabify permite agendar voos de helicóptero pelo seu aplicativo - https://t.co/57j9VKJD9g', '2017-08-02 11:43:57', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892712571584860160, 2);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('cabify', '2');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Cabify PoA', 'CabifyPoA', 'Porto Alegre, Brasil');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Cabify PoA';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892701749798219777, 'Receba R$15 de desconto em sua 1ª viagem utilizando o código: 👉 ZENELIT1 ou faça o cadastro no link:… https://t.co/fJm39AQ2gK', '2017-08-02 11:00:57', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892701749798219777, 2);")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Cabify PoA', 'CabifyPoA', 'Porto Alegre, Brasil');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Cabify PoA';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892686463955087368, 'Ação da Cabify com o @governo_rs está sendo um sucesso: já foram + de 30 mil peças arrecadadas!  👉… https://t.co/OHTSTtdzAL', '2017-08-02 10:00:12', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892686463955087368, 2);")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Cabify PoA', 'CabifyPoA', 'Porto Alegre, Brasil');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Cabify PoA';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892671440251748352, 'Desconto 15% no Cabify #PoA 🚘 Código 👉 CABIBR1425 . ⚠️ Pra quem ainda não usou 📌 Válido: 31/12 . #Cabify https://t.co/MHbbBv51t5', '2017-08-02 09:00:31', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892671440251748352, 2);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('poa');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('cabify', '2');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Cabify PoA', 'CabifyPoA', 'Porto Alegre, Brasil');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Cabify PoA';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892555946731483136, 'Desconto 15% no Cabify #PoA 🚘 Código 👉 CABIBR1425 . ⚠️ Pra quem ainda não usou 📌 Válido: 31/12 . #Cabify https://t.co/Wx0fmeUf1G', '2017-08-02 01:21:35', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892555946731483136, 2);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('poa');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('cabify', '2');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Cabify PoA', 'CabifyPoA', 'Porto Alegre, Brasil');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Cabify PoA';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892550572695539713, 'Desconto 50% no Cabify PoA 🚘 Código 👉 INGREDIENTE . ⚠️ Só p/ novos usuários. 📌 Válidade até: 15/12. . #Cabify #PoA… https://t.co/BtdLxjfzEf', '2017-08-02 01:00:13', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892550572695539713, 2);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('cabify', '2');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('poa');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Victoria', 'Vic_Walker', 'São Paulo, Brasil');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Victoria';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892509059563343873, 'Precisa ir a algum lugar e está sem dinheiro? Vai de #Cabify com código VICTORIAM124 e ganhe R$15 pra usar!… https://t.co/c8ASU2aB7W', '2017-08-01 22:15:16', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892509059563343873, 2);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('cabify', '2');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Cabify PoA', 'CabifyPoA', 'Porto Alegre, Brasil');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Cabify PoA';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892490340720103425, 'Ação da Cabify com o @governo_rs está sendo um sucesso: já foram + de 30 mil peças arrecadadas!  👉… https://t.co/bCfmoirbPx', '2017-08-01 21:00:53', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892490340720103425, 2);")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Mauricio Oliveira', 'aventureiros', 'Rio de Janeiro - RJ');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Mauricio Oliveira';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892482624094183424, 'Assim como eu, use #Cabify e ganhe R$20,00 na sua primeira viagem . Registre-se aqui: https://t.co/MKGgKWexbD', '2017-08-01 20:30:13', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892482624094183424, 2);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('cabify', '2');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Cabify PoA', 'CabifyPoA', 'Porto Alegre, Brasil');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Cabify PoA';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892460038681493507, 'Desconto 50% no Cabify PoA 🚘 Código 👉 INGREDIENTE . ⚠️ Só p/ novos usuários. 📌 Válidade até: 15/12. . #Cabify #PoA… https://t.co/qnEcnBFZG0', '2017-08-01 19:00:28', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892460038681493507, 2);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('cabify', '2');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('poa');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Maurício#BetaquerLab', 'MauricioArauj01', 'Maceió, Brasil');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Maurício#BetaquerLab';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892449842173272064, 'RT @thathaocosta: Usem #Cabify amoressss.. Meu código é THAMYRESC15  e  ganha desconto ai', '2017-08-01 18:19:57', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892449842173272064, 2);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('cabify', '2');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Cabify PoA', 'CabifyPoA', 'Porto Alegre, Brasil');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Cabify PoA';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892429926338637825, 'Receba R$15 de desconto em sua 1ª viagem utilizando o código: 👉 ZENELIT1 ou faça o cadastro no link:… https://t.co/ArAA29lCIL', '2017-08-01 17:00:49', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892429926338637825, 2);")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Cabify PoA', 'CabifyPoA', 'Porto Alegre, Brasil');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Cabify PoA';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892399845469716480, 'Ação da Cabify com o @governo_rs está sendo um sucesso: já foram + de 30 mil peças arrecadadas!  👉… https://t.co/nutZPFSVdk', '2017-08-01 15:01:17', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892399845469716480, 2);")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Mauricio Oliveira', 'aventureiros', 'Rio de Janeiro - RJ');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Mauricio Oliveira';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892384562155794432, 'Ganhe R$20,00 na sua primeira corrida de #Cabify usando o código mauricioo322', '2017-08-01 14:00:33', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892384562155794432, 2);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('cabify', '2');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Cabify PoA', 'CabifyPoA', 'Porto Alegre, Brasil');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Cabify PoA';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892369510426189824, 'Desconto 50% no Cabify PoA 🚘 Código 👉 INGREDIENTE . ⚠️ Só p/ novos usuários. 📌 Válidade até: 15/12. . #Cabify #PoA… https://t.co/VSKMQ9pZY9', '2017-08-01 13:00:45', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892369510426189824, 2);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('cabify', '2');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('poa');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username) values('Orkut.br.com', 'orkut_li');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Orkut.br.com';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892369166363176960, 'RT @lihzamith: Nessa promo Do Cabify - orkut consegui DEPOIMENTO, SCRAP, COMUNIDADE, SORTEDEHOJE. Mais alguma gente? #Cabify #Orkut https:/…', '2017-08-01 12:59:23', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892369166363176960, 2);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('cabify', '2');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('orkut');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Cabify PoA', 'CabifyPoA', 'Porto Alegre, Brasil');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Cabify PoA';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892339352122077184, 'Receba R$15 de desconto em sua 1ª viagem utilizando o código: 👉 ZENELIT1 ou faça o cadastro no link:… https://t.co/PfyeAX98sp', '2017-08-01 11:00:55', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892339352122077184, 2);")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Cabify PoA', 'CabifyPoA', 'Porto Alegre, Brasil');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Cabify PoA';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892309077287686145, 'Ação da Cabify com o @governo_rs está sendo um sucesso: já foram + de 30 mil peças arrecadadas!  👉… https://t.co/VePkNuIRqV', '2017-08-01 09:00:36', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892309077287686145, 2);")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Lívia Zamith', 'lihzamith', 'Rio de Janeiro');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Lívia Zamith';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892217422018641920, 'Nessa promo Do Cabify - orkut consegui DEPOIMENTO, SCRAP, COMUNIDADE, SORTEDEHOJE. Mais alguma gente? #Cabify #Orkut https://t.co/SeUZwvFada', '2017-08-01 02:56:24', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892217422018641920, 2);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('cabify', '2');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('orkut');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Cabify PoA', 'CabifyPoA', 'Porto Alegre, Brasil');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Cabify PoA';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892203270638366720, 'Siga/Curta nossos perfis: . 🚗 Twitter: https://t.co/1B59U1HWH7 . 🚗 Facebook: https://t.co/sNzhLhIZnv . #Cabify #PoA… https://t.co/HPqGEqzbfr', '2017-08-01 02:00:10', '3', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892203270638366720, 2);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('cabify', '2');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('poa');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username) values('Alice Herrera', 'herreralice');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Alice Herrera';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892198566801940481, '@cabifybrasil  Códigos do orkut: comunidade, depoimento, scrap, sortedehoje #cabify #orkut', '2017-08-01 01:41:29', '3', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892198566801940481, 2);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('cabify', '2');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('orkut');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('JOÃO', 'joaomagagnin', 'BRASIL');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'JOÃO';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892189027377569793, 'Meu povo, segura esses códigos do cabify: scrap, comunidade e depoimento #cabify', '2017-08-01 01:03:34', '3', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892189027377569793, 2);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('cabify', '2');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Cabify PoA', 'CabifyPoA', 'Porto Alegre, Brasil');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Cabify PoA';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892188250596659201, 'Cabify e Panvel levam e buscam você gratuitamente pra doar sangue em POA. . Saiba mais 👉 https://t.co/3FngKpEnq3 .… https://t.co/Q1ppwLrZFv', '2017-08-01 01:00:29', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892188250596659201, 2);")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Cabify PoA', 'CabifyPoA', 'Porto Alegre, Brasil');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Cabify PoA';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892173130239803393, '#Spotify | Playlist Cabify PoA: Curtindo a Vida! . 🎶 https://t.co/VIU793T23u . #Cabify #PoA #PortoAlegre #Spotify… https://t.co/6SWnhHvNgu', '2017-08-01 00:00:24', '3', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892173130239803393, 2);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('spotify');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('cabify', '2');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('poa');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('portoalegre');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('spotify');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Bruno Rodrigues', 'BrunoRodrigues_', 'Brasil');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Bruno Rodrigues';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892172463433535488, '#Cupom #Cabify #Brasília VEMAGOSTO  10 viagens com 25% desconto.', '2017-07-31 23:57:45', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892172463433535488, 2);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('cupom');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('cabify', '2');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('brasília');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username) values('Ariana', 'Ariana______');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Ariana';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892170455343411201, 'teste pro projeto #cabify', '2017-07-31 23:49:46', '3', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892170455343411201, 2);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('cabify', '2');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Cabify PoA', 'CabifyPoA', 'Porto Alegre, Brasil');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Cabify PoA';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892158079252516864, 'Desconto 50% no Cabify PoA 🚘 Código 👉 INGREDIENTE . ⚠️ Só p/ novos usuários. 📌 Válidade até: 15/12. . #Cabify #PoA… https://t.co/XIRRzcquV4', '2017-07-31 23:00:36', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892158079252516864, 2);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('cabify', '2');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('poa');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Victoria', 'Vic_Walker', 'São Paulo, Brasil');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Victoria';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892146632061538304, 'Precisa ir a algum lugar e está sem dinheiro? Vai de #Cabify com código VICTORIAM124 e ganhe R$15 pra usar!… https://t.co/VV0vnIq7hM', '2017-07-31 22:15:07', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892146632061538304, 2);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('cabify', '2');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Cabify PoA', 'CabifyPoA', 'Porto Alegre, Brasil');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Cabify PoA';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892143032316956675, 'Ação da Cabify com o @governo_rs está sendo um sucesso: já foram + de 30 mil peças arrecadadas!  👉… https://t.co/oKrnMtXnSR', '2017-07-31 22:00:48', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892143032316956675, 2);")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Cabify PoA', 'CabifyPoA', 'Porto Alegre, Brasil');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Cabify PoA';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892127914342350855, 'Receba R$15 de desconto em sua 1ª viagem utilizando o código: 👉 ZENELIT1 ou faça o cadastro no link:… https://t.co/0Ivu0Qdh8r', '2017-07-31 21:00:44', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892127914342350855, 2);")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Mauricio Oliveira', 'aventureiros', 'Rio de Janeiro - RJ');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Mauricio Oliveira';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892120211977121795, 'Assim como eu, use #Cabify e ganhe R$20,00 na sua primeira viagem . Registre-se aqui: https://t.co/MKGgKWexbD', '2017-07-31 20:30:07', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892120211977121795, 2);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('cabify', '2');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Cabify PoA', 'CabifyPoA', 'Porto Alegre, Brasil');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Cabify PoA';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892112731435827200, 'Siga/Curta nossos perfis: . 🚗 Twitter: https://t.co/1B59U1HWH7 . 🚗 Facebook: https://t.co/sNzhLhIZnv . #Cabify #PoA… https://t.co/N3ntzPNWYh', '2017-07-31 20:00:24', '3', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892112731435827200, 2);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('cabify', '2');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('poa');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Cabify PoA', 'CabifyPoA', 'Porto Alegre, Brasil');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Cabify PoA';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892097849533530112, 'Cabify e Panvel levam e buscam você gratuitamente pra doar sangue em POA. . Saiba mais 👉 https://t.co/3FngKpEnq3 .… https://t.co/IARV6BwMVa', '2017-07-31 19:01:16', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892097849533530112, 2);")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Cabify PoA', 'CabifyPoA', 'Porto Alegre, Brasil');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Cabify PoA';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892082697832673281, '#Spotify | Playlist Cabify PoA: Curtindo a Vida! . 🎶 https://t.co/VIU793T23u . #Cabify #PoA #PortoAlegre #Spotify… https://t.co/FdRt6DaNmP', '2017-07-31 18:01:03', '3', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892082697832673281, 2);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('spotify');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('cabify', '2');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('poa');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('portoalegre');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('spotify');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Cabify PoA', 'CabifyPoA', 'Porto Alegre, Brasil');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Cabify PoA';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892067655410212871, 'Desconto 50% no Cabify PoA 🚘 Código 👉 INGREDIENTE . ⚠️ Só p/ novos usuários. 📌 Válidade até: 15/12. . #Cabify #PoA… https://t.co/kPYphjozhP', '2017-07-31 17:01:17', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892067655410212871, 2);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('cabify', '2');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('poa');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Chefe Da Quadrilha', 'QueroSerRica', 'Rio de Janeiro');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Chefe Da Quadrilha';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892060165092118530, 'Oi @CabifyRj vou precisar de promoção pra 2 corridas na 5a feira. Dá uma ajuda aí, vai... Nunca te pedi nada. #Cabify #vádecabify', '2017-07-31 16:31:31', '3', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892060165092118530, 2);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('cabify', '2');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('vádecabify', '2');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Cabify PoA', 'CabifyPoA', 'Porto Alegre, Brasil');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Cabify PoA';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892052340370485249, 'Ação da Cabify com o @governo_rs está sendo um sucesso: já foram + de 30 mil peças arrecadadas!  👉… https://t.co/iWLAQx9chR', '2017-07-31 16:00:26', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892052340370485249, 2);")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Cabify PoA', 'CabifyPoA', 'Porto Alegre, Brasil');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Cabify PoA';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892037379690827777, 'Receba R$15 de desconto em sua 1ª viagem utilizando o código: 👉 ZENELIT1 ou faça o cadastro no link:… https://t.co/DGdO0g1ZJ8', '2017-07-31 15:00:59', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892037379690827777, 2);")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Cabify PoA', 'CabifyPoA', 'Porto Alegre, Brasil');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Cabify PoA';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892022266220990466, 'Siga/Curta nossos perfis: . 🚗 Twitter: https://t.co/1B59U1HWH7 . 🚗 Facebook: https://t.co/sNzhLhIZnv . #Cabify #PoA… https://t.co/3JVZC7a64p', '2017-07-31 14:00:55', '3', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892022266220990466, 2);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('cabify', '2');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('poa');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Mauricio Oliveira', 'aventureiros', 'Rio de Janeiro - RJ');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Mauricio Oliveira';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892022115452538880, 'Ganhe R$20,00 na sua primeira corrida de #Cabify usando o código mauricioo322', '2017-07-31 14:00:19', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892022115452538880, 2);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('cabify', '2');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Cabify PoA', 'CabifyPoA', 'Porto Alegre, Brasil');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Cabify PoA';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892007275770073090, 'Cabify e Panvel levam e buscam você gratuitamente pra doar sangue em POA. . Saiba mais 👉 https://t.co/3FngKpEnq3 .… https://t.co/5e81TNflYh', '2017-07-31 13:01:21', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892007275770073090, 2);")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Cabify PoA', 'CabifyPoA', 'Porto Alegre, Brasil');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Cabify PoA';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(891992104506990592, '#Spotify | Playlist Cabify PoA: Curtindo a Vida! . 🎶 https://t.co/VIU793T23u . #Cabify #PoA #PortoAlegre #Spotify… https://t.co/7gMMdYcpnp', '2017-07-31 12:01:04', '3', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(891992104506990592, 2);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('spotify');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('cabify', '2');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('poa');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('portoalegre');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('spotify');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username) values('Teresa Wegner', 'teresa_wegner');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Teresa Wegner';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(891991458059833344, 'RT @talitha_cardozo: A voz do Waze do #Cabify é o Faustão. Why God why?', '2017-07-31 11:58:30', '2', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(891991458059833344, 2);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('cabify', '2');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Cabify PoA', 'CabifyPoA', 'Porto Alegre, Brasil');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Cabify PoA';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(891976961769299968, 'Desconto 50% no Cabify PoA 🚘 Código 👉 INGREDIENTE . ⚠️ Só p/ novos usuários. 📌 Válidade até: 15/12. . #Cabify #PoA… https://t.co/AsgmCjIoPf', '2017-07-31 11:00:54', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(891976961769299968, 2);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('cabify', '2');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('poa');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Cabify PoA', 'CabifyPoA', 'Porto Alegre, Brasil');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Cabify PoA';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(891961693089275904, 'Ação da Cabify com o @governo_rs está sendo um sucesso: já foram + de 30 mil peças arrecadadas!  👉… https://t.co/7eWrpPXRPi', '2017-07-31 10:00:14', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(891961693089275904, 2);")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Cabify PoA', 'CabifyPoA', 'Porto Alegre, Brasil');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Cabify PoA';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(891946694774071296, 'Receba R$15 de desconto em sua 1ª viagem utilizando o código: 👉 ZENELIT1 ou faça o cadastro no link:… https://t.co/uCXjsQpaTy', '2017-07-31 09:00:38', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(891946694774071296, 2);")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Cabify PoA', 'CabifyPoA', 'Porto Alegre, Brasil');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Cabify PoA';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(891916413325193216, 'Desconto 50% no Cabify #PoA 🚘 Código 👉 2ANOSMAORISUNSET . ⚠️ Destino/Origem Arena do Grêmio 📌 Válido 30/07 - 12h at… https://t.co/XJab6uxMps', '2017-07-31 07:00:18', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(891916413325193216, 2);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('poa');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Cabify PoA', 'CabifyPoA', 'Porto Alegre, Brasil');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Cabify PoA';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(891886189917208576, 'Desconto 50% no Cabify #PoA 🚘 Código 👉 2ANOSMAORISUNSET . ⚠️ Destino/Origem Arena do Grêmio 📌 Válido 30/07 - 12h at… https://t.co/qRHxlqZ6sH', '2017-07-31 05:00:12', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(891886189917208576, 2);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('poa');")
+except:
+    print('Erro')
+
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('DiEGO CASTILHO', 'diegoocastilhoo', 'Brasil');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'DiEGO CASTILHO';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(891969231801241601, 'Já usou o #UBER? Crie sua conta com o código UBERVALEDESCONTO e ganhe um descontão na sua primeira viagem ✅', '2017-07-31 10:30:11', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(891969231801241601, 1);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uber', '1');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Vitor Santos', 'jornalistavitor', 'Brasil');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Vitor Santos';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(891967347048796162, 'RT @diariodegoias: Iris afirma que regulamentação do @Uber em Goiânia será enviada à Câmara #Uber https://t.co/TuPW7ESTFg https://t.co/1y7a…', '2017-07-31 10:22:42', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(891967347048796162, 1);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uber', '1');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Carlos Bueno Moraes', 'carlosbuenoDG', 'Goiânia');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Carlos Bueno Moraes';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(891947056360804353, 'Iris afirma que regulamentação do @Uber em Goiânia será enviada à Câmara #Uber https://t.co/wxbSJmekZ3 https://t.co/BxuBSXtSq1', '2017-07-31 09:02:04', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(891947056360804353, 1);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uber', '1');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Diário de Goiás', 'diariodegoias', 'Goiânia');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Diário de Goiás';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(891947049620582400, 'Iris afirma que regulamentação do @Uber em Goiânia será enviada à Câmara #Uber https://t.co/TuPW7ESTFg https://t.co/1y7aVg5u2e', '2017-07-31 09:02:02', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(891947049620582400, 1);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uber', '1');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Denis Godoy', 'denisgodoy', 'São Paulo, Brasil');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Denis Godoy';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(891930332555083776, 'Inscreva-se na Uber usando este link e ganhe 5€ para a primeira viagem https://t.co/M4r4q86x6O &gt; g3e8o4 #uber #portugal #porto #lisboa', '2017-07-31 07:55:37', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(891930332555083776, 1);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uber', '1');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('portugal');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('porto');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('lisboa');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username) values('KevlarOk', 'kevlarok');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'KevlarOk';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(891904941295628288, 'Código uber #Argentina para 2 viajes gratis de $100 en total:  5nm2quddue  😎🎉🚗👏💟💳📍🏙️  #Codigo #Uber #codigouber #Arg #Gratis #UberArgentina', '2017-07-31 06:14:43', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(891904941295628288, 1);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('argentina');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('codigo');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uber', '1');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('codigouber', '1');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('arg');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('gratis');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uberargentina', '1');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('MARLON BRANDO', 'MARLONOFICCIAL', 'Los Angeles - USA');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'MARLON BRANDO';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(891898829242609664, 'RT @OTuitterEumCU: Acabei de Pegar um #UBER prá ir para o Rio de Janeiro e Já estou #Chegando em Manaus! https://t.co/iebIQVuQjP', '2017-07-31 05:50:26', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(891898829242609664, 1);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uber', '1');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('chegando');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Caio Cesar', 'caiocgo', 'Belo Horizonte, Brasil');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Caio Cesar';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(891866765986336769, 'Ninguém tem que trabalhar mais de 12h por dia para tentar conseguir pagar as contas. Isso é desumano, não é parceria. #uber #cabify', '2017-07-31 03:43:01', '2', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(891866765986336769, 1);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uber', '1');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('cabify');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Carlos Bueno Moraes', 'carlosbuenoDG', 'Goiânia');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Carlos Bueno Moraes';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(891856463538376704, 'Iris afirma que regulamentação do @Uber em Goiânia será enviada à Câmara #Uber https://t.co/wxbSJmekZ3 https://t.co/HZ5xJaaxNg', '2017-07-31 03:02:05', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(891856463538376704, 1);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uber', '1');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Diário de Goiás', 'diariodegoias', 'Goiânia');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Diário de Goiás';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(891856457175642113, 'Iris afirma que regulamentação do @Uber em Goiânia será enviada à Câmara #Uber https://t.co/TuPW7ESTFg https://t.co/57ruJWQfFx', '2017-07-31 03:02:03', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(891856457175642113, 1);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uber', '1');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username) values('Hardy Polansky', 'HardyPolansky');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Hardy Polansky';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(891851008665673729, 'RT @OTuitterEumCU: Acabei de Pegar um #UBER prá ir para o Rio de Janeiro e Já estou #Chegando em Manaus! https://t.co/iebIQVuQjP', '2017-07-31 02:40:24', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(891851008665673729, 1);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uber', '1');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('chegando');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username) values('Angélica Elmescany', 'elmescania');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Angélica Elmescany';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(891845031820242945, 'Motorista do uber só sabe pedir estrelinha. Mas num sabe retribuir com elas! #uberbelem #uber', '2017-07-31 02:16:39', '2', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(891845031820242945, 1);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uberbelem', '1');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uber', '1');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username) values('Buteco 512', 'Buteco512');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Buteco 512';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(891830796780269573, 'Luciana...eu te entendo😂😂😂#crazy #very #verycrazy #luciana #uber #buteco512 https://t.co/V4nf8Xrgww', '2017-07-31 01:20:06', '3', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(891830796780269573, 1);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('crazy');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('very');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('verycrazy');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('luciana');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uber', '1');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('buteco512');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('DJ SANDER TEODORO', 'DJSANDERTEODORO', 'CURITIBA');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'DJ SANDER TEODORO';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(891825954653450241, 'Destesto com todas minhas forças, motorista tagarela. #Uber — se sentindo desconfortável', '2017-07-31 01:00:51', '2', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(891825954653450241, 1);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uber', '1');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username) values('Diego Leal', 'Eu2Di');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Diego Leal';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(891790469256159232, '#Uber ... Função...Levar a melhor parte do meu fds embora...', '2017-07-30 22:39:51', '3', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(891790469256159232, 1);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uber', '1');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Renan Moratto', 'remorato', 'São Paulo - SP');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Renan Moratto';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(891774607031664640, 'a 99 tem o serviço alternativo ao #uber e também tem #cupom no 99pop usa lá o código RENANMORATTO https://t.co/oDlJwUQES4 #desconto #99taxi', '2017-07-30 21:36:49', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(891774607031664640, 1);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uber', '1');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('cupom');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('desconto');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('99taxi');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Renan Moratto', 'remorato', 'São Paulo - SP');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Renan Moratto';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(891773817592459266, 'Pra primeira viagem da #cabify #desconto #taxi #uber usa o #cupom renanm96 &gt;&gt; R$15 #cupomcabify #cupomuber #desconto', '2017-07-30 21:33:41', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(891773817592459266, 1);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('cabify');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('desconto');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('taxi');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uber', '1');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('cupom');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('cupomcabify');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('cupomuber', '1');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('desconto');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('DiEGO CASTILHO', 'diegoocastilhoo', 'Brasil');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'DiEGO CASTILHO';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(891772981298552832, 'Já usou o #UBER? Crie sua conta com o código UBERVALEDESCONTO e ganhe um descontão na sua primeira viagem ✅', '2017-07-30 21:30:21', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(891772981298552832, 1);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uber', '1');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username) values('LUCIANA CARVALHO', 'JonBonROCKJR');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'LUCIANA CARVALHO';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(891770848864071682, 'RT @OTuitterEumCU: Acabei de Pegar um #UBER prá ir para o Rio de Janeiro e Já estou #Chegando em Manaus! https://t.co/iebIQVuQjP', '2017-07-30 21:21:53', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(891770848864071682, 1);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uber', '1');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('chegando');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Rodrigo Gomes', 'rgomesbr', 'Santo André, SP');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Rodrigo Gomes';")[0][0]
+    dao.Executa_SQL("insert into voudeque.lugar(latitude, longitude, nome_lugar) values('-23.815924', '-46.567276', 'são bernardo do campo');")
+    id_lugar = dao.Busca_SQL("select id from voudeque.lugar where nome_lugar = 'são bernardo do campo' and latitude = '-23.815924'and longitude = '-46.567276';")[0][0]
+    id_lugar = dao.Busca_SQL("select id from voudeque.lugar where lugar.nome_lugar = 'são bernardo do campo';")[0][0]
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(891770237183569920, 'Meu cupom ♥:uberrgomes: te dá R$ 20 de desconto em suas primeiras viagens (10 cada) com @Uber_Brasil @Uber #uber #desconto #cupom #promocao', '2017-07-30 21:19:27', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(891770237183569920, 1);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uber', '1');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('desconto');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('cupom');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('promocao');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Carlos Bueno Moraes', 'carlosbuenoDG', 'Goiânia');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Carlos Bueno Moraes';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(891765870548144128, 'Iris afirma que regulamentação do @Uber em Goiânia será enviada à Câmara #Uber https://t.co/wxbSJmekZ3 https://t.co/iLwWtpb5rN', '2017-07-30 21:02:06', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(891765870548144128, 1);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uber', '1');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Diário de Goiás', 'diariodegoias', 'Goiânia');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Diário de Goiás';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(891765864793595905, 'Iris afirma que regulamentação do @Uber em Goiânia será enviada à Câmara #Uber https://t.co/TuPW7ESTFg https://t.co/8mRJDR1QUx', '2017-07-30 21:02:05', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(891765864793595905, 1);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uber', '1');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Mauricio Oliveira', 'aventureiros', 'Rio de Janeiro - RJ');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Mauricio Oliveira';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(891761623492329473, 'Ganhe R$20 de #desconto em cada uma de suas próximas 2 viagens no #Uber! Use e compartilhe o código: uber20pramim', '2017-07-30 20:45:13', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(891761623492329473, 1);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('desconto');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uber', '1');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Danrley Barbosa', 'SandyDanrley', 'Porteirinha, Minas Gerais');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Danrley Barbosa';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(891732881671954432, 'mc9v26  #uber código promocional 20$ de desconto #UberEATS #ubersurvivor #ubermg #ubercode #linda #lindo #cute #br #twitter   #brasild', '2017-07-30 18:51:01', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(891732881671954432, 1);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uber', '1');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('ubereats', '1');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('ubersurvivor', '1');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('ubermg', '1');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('ubercode', '1');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('linda');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('lindo');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('cute');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('br');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('twitter');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('brasild');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Danrley Barbosa', 'SandyDanrley', 'Porteirinha, Minas Gerais');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Danrley Barbosa';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(891732856946524161, 'mc9v26  #uber código promocional 20$ de desconto #UberEATS #ubersurvivor #ubermg #ubercode #linda #lindo #cute #br #twitter   #brasie', '2017-07-30 18:50:55', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(891732856946524161, 1);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uber', '1');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('ubereats', '1');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('ubersurvivor', '1');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('ubermg', '1');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('ubercode', '1');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('linda');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('lindo');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('cute');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('br');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('twitter');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('brasie');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Danrley Barbosa', 'SandyDanrley', 'Porteirinha, Minas Gerais');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Danrley Barbosa';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(891732792178089984, 'mc9v26  #uber código promocional 20$ de desconto #UberEATS #ubersurvivor #ubermg #ubercode #linda #lindo #cute #br #twitter   #brasil', '2017-07-30 18:50:39', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(891732792178089984, 1);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uber', '1');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('ubereats', '1');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('ubersurvivor', '1');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('ubermg', '1');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('ubercode', '1');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('linda');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('lindo');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('cute');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('br');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('twitter');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('brasil');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Gabriela', 'GabGeminiana', 'Rio Grande do Sul, Brasil');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Gabriela';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(891724424931680256, 'to com um certo nojo da #Uber', '2017-07-30 18:17:24', '2', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(891724424931680256, 1);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uber', '1');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Táxi Rio', 'taxinorio', 'Brasil - Rio de Janeiro - RJ');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Táxi Rio';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(891723792761991168, 'Carro da UBER com Kit de gás vencido explode em posto de gasolina no Rio de Janeiro. #explosão #UBER #fiscalização… https://t.co/uQo8acV13O', '2017-07-30 18:14:54', '2', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(891723792761991168, 1);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('explosão');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uber', '1');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('fiscalização');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username) values('Empregos Em Manaus', 'EmpregosEmMAO');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Empregos Em Manaus';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(891715475100577792, 'Já utilizou o #Uber em Manaus? Ainda não? Aproveite,  já estão aceitando pagamento em dinheiro! Use o código: EmpregosEmManaus  #UberManaus', '2017-07-30 17:41:51', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(891715475100577792, 1);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uber', '1');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('ubermanaus', '1');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Victoria', 'Vic_Walker', 'São Paulo, Brasil');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Victoria';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(891708772447596547, 'Precisa de uma carona? Usa #Uber com o código UBERVICWALKER e ganhe 2 viagens de até R$10! https://t.co/BMjMR7JPhE https://t.co/fax8WQUWyr', '2017-07-30 17:15:13', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(891708772447596547, 1);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uber', '1');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('HAVANA Lab', 'havanalab', 'Porto Alegre, Brasil');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'HAVANA Lab';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(891676904880840704, 'PROMOÇÃO - Ganhe desconto nas suas viagens de Uber com o nosso código 8st93a9fue - #uBER #cÓDIGO #PROMOÇÃO #DESCONTO', '2017-07-30 15:08:35', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(891676904880840704, 1);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uber', '1');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('código');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('promoção');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('desconto');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Carlos Bueno Moraes', 'carlosbuenoDG', 'Goiânia');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Carlos Bueno Moraes';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(891675264647917568, 'Iris afirma que regulamentação do @Uber em Goiânia será enviada à Câmara #Uber https://t.co/wxbSJmekZ3 https://t.co/9qXP54bzYd', '2017-07-30 15:02:04', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(891675264647917568, 1);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uber', '1');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Diário de Goiás', 'diariodegoias', 'Goiânia');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Diário de Goiás';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(891675259006586880, 'Iris afirma que regulamentação do @Uber em Goiânia será enviada à Câmara #Uber https://t.co/TuPW7ESTFg https://t.co/b5n3hUmo6e', '2017-07-30 15:02:02', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(891675259006586880, 1);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uber', '1');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username) values('cleberson fla', 'fla_cleberson');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'cleberson fla';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(891669948711481344, 'RT @OficialAvioes: Esse é o som do grito dos #Aviãozeiros de #PastosBons!😻🔝 #FazOXis do Comandante pra voar alto hoje #DeMãosAtadas e #Uber…', '2017-07-30 14:40:56', '3', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(891669948711481344, 1);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('aviãozeiros');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('pastosbons');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('fazoxis');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('demãosatadas');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uber', '1');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username) values('Niamh Robertson', 'oneclebo1972');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Niamh Robertson';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(891666702483824641, 'RT @marioasato: Galera, 20 reais de desconto nas duas primeiras viagens de #uber usando esse cupom de desconto. z15y4xc8ue', '2017-07-30 14:28:02', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(891666702483824641, 1);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uber', '1');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Alexandre Souza ♎️', 'AleSoouza23', 'Duque de Caxias');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Alexandre Souza ♎️';")[0][0]
+    dao.Executa_SQL("insert into voudeque.lugar(latitude, longitude, nome_lugar) values('-23.08302', '-43.795449', 'itaguaí');")
+    id_lugar = dao.Busca_SQL("select id from voudeque.lugar where nome_lugar = 'itaguaí' and latitude = '-23.08302'and longitude = '-43.795449';")[0][0]
+    id_lugar = dao.Busca_SQL("select id from voudeque.lugar where lugar.nome_lugar = 'itaguaí';")[0][0]
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(891665592918429696, 'Vem ser Feliz !!! #uber #bomdia #uberbrasil #motorista #cadastro #indicação  Eu uso a uber para… https://t.co/XuKwzHbg02', '2017-07-30 14:23:38', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(891665592918429696, 1);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uber', '1');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('bomdia');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uberbrasil', '1');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('motorista');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('cadastro');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('indicação');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Mauricio Oliveira', 'aventureiros', 'Rio de Janeiro - RJ');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Mauricio Oliveira';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(891648371257204736, 'Use o código uber20pramim e ganhe R$20 de #desconto em cada uma de suas próximas 2 viagens no #Uber! Compartilhe.', '2017-07-30 13:15:12', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(891648371257204736, 1);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('desconto');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uber', '1');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Lucas Montilla', 'Lucasms87', 'Curitiba-PR');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Lucas Montilla';")[0][0]
+    dao.Executa_SQL("insert into voudeque.lugar(latitude, longitude, nome_lugar) values('-27.8389356', '-48.6103127', 'florianópolis');")
+    id_lugar = dao.Busca_SQL("select id from voudeque.lugar where nome_lugar = 'florianópolis' and latitude = '-27.8389356'and longitude = '-48.6103127';")[0][0]
+    id_lugar = dao.Busca_SQL("select id from voudeque.lugar where lugar.nome_lugar = 'florianópolis';")[0][0]
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(891635384387547136, 'Pra começar bem o domingo.  #NoFilter #Uber #5estrelas #Floripa… https://t.co/0ZIfGspEKa', '2017-07-30 12:23:36', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(891635384387547136, 1);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('nofilter');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uber', '1');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('5estrelas');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('floripa');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username) values('Vidadeuber', 'vidadeuber');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Vidadeuber';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(891635270201856000, 'Bom dia galera.  Mas conversas com passageiros sempre pode sair algo de bom. #uber #vidadeuber #saopaulo https://t.co/vx504TEhNB', '2017-07-30 12:23:08', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(891635270201856000, 1);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uber', '1');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('vidadeuber', '1');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('saopaulo');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Vinicius Soares', 'cantorvinicius_', 'Rio de Janeiro, Brasil');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Vinicius Soares';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(891608821226975232, 'Agradecer a #UBER por evitar um homicídio doloso, sim, que tem intenção de matar mesmo... kkkkkkkk que medo! 😱😂', '2017-07-30 10:38:02', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(891608821226975232, 1);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uber', '1');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Verbena Ash', 'verbenash', 'Brasil');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Verbena Ash';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(891604490499088384, 'Por esse e outros motivos parei de andar de táxi depois que aplicativos como o #uber foram lançados! Táxi virou a... https://t.co/zlHfFhEZSZ', '2017-07-30 10:20:50', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(891604490499088384, 1);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uber', '1');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('DiEGO CASTILHO', 'diegoocastilhoo', 'Brasil');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'DiEGO CASTILHO';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(891591778058555392, 'Já usou o #UBER? Crie sua conta com o código UBERVALEDESCONTO e ganhe um descontão na sua primeira viagem ✅', '2017-07-30 09:30:19', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(891591778058555392, 1);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uber', '1');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Carlos Bueno Moraes', 'carlosbuenoDG', 'Goiânia');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Carlos Bueno Moraes';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(891584667241127936, 'Iris afirma que regulamentação do @Uber em Goiânia será enviada à Câmara #Uber https://t.co/wxbSJmekZ3 https://t.co/y4Ye2aALMw', '2017-07-30 09:02:04', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(891584667241127936, 1);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uber', '1');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Diário de Goiás', 'diariodegoias', 'Goiânia');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Diário de Goiás';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(891584662279270401, 'Iris afirma que regulamentação do @Uber em Goiânia será enviada à Câmara #Uber https://t.co/TuPW7ESTFg https://t.co/7i6PGCuHR2', '2017-07-30 09:02:02', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(891584662279270401, 1);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uber', '1');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Lloyd', 'Lloyd9611', 'PH ');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Lloyd';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(891567466542809088, '#UBERPROMO #UBERCODE #UBER #UBERPH #OFF50 arons1102ui &lt;---PROMO CODE 50 PESOS OFF', '2017-07-30 07:53:43', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(891567466542809088, 1);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uberpromo', '1');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('ubercode', '1');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uber', '1');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uberph', '1');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('off50');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Kend ❄️', 'beabeables', 'Santos, Brasil');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Kend ❄️';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(891551645766758400, 'Mano, tudo bem ter medo de subir no morro, mas é só n aceitar a corrida, do q ficar a viagem toda falando merda #uber', '2017-07-30 06:50:51', '2', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(891551645766758400, 1);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uber', '1');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Thalles Luiz', 'tallesluiz2', 'Canguaretama, Brasil');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Thalles Luiz';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(891522725243703296, 'RT @pirulitodemacho: Acho que o meu #Uber acabou de chegar #PLDM🍭 RT🔁 FAV❤ https://t.co/2ryL1UARX6', '2017-07-30 04:55:56', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(891522725243703296, 1);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uber', '1');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('pldm');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username) values('Garotinho', 'GarotiinhoBA');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Garotinho';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(891517002740899840, 'RT @pirulitodemacho: Acho que o meu #Uber acabou de chegar #PLDM🍭 RT🔁 FAV❤ https://t.co/2ryL1UARX6', '2017-07-30 04:33:11', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(891517002740899840, 1);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uber', '1');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('pldm');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Fernando Souza', 'Fernando348', 'São Paulo, Brasil');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Fernando Souza';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(891509236357836800, 'Eu não tô acreditando... #Uber https://t.co/tPFzV9qhq6', '2017-07-30 04:02:20', '3', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(891509236357836800, 1);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uber', '1');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Denis Godoy', 'denisgodoy', 'São Paulo, Brasil');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Denis Godoy';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(891495308441661440, 'Viagem Uber grátis! Para resgatar sua viagem, inscreva-se usando este link: https://t.co/jglT1392Ff &gt; g3e8o4 #uber #portugal #porto #lisboa', '2017-07-30 03:06:59', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(891495308441661440, 1);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uber', '1');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('portugal');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('porto');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('lisboa');")
+except:
+    print('Erro')
+import persistencia.DataBase as dao
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Tom de Vasconcelos', 'TOM_BETA_', 'Betim-MG');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Tom de Vasconcelos';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892161609828896769, 'RT @CamilaTIMBeta17: #SDV HDRXB4JWUE #Uber #Gratis #Free #TimBetaAjuda RT @MFilaretti: #timbeta - Durma com ideias. Acorde com atitudes. #u…', '2017-07-31 23:14:38', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892161609828896769, 1);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('sdv');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uber', '1');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('gratis');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('free');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('timbetaajuda');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('timbeta');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Tom de Vasconcelos', 'TOM_BETA_', 'Betim-MG');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Tom de Vasconcelos';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892161470435393536, 'RT @CamilaTIMBeta17: #SDV HDRXB4JWUE #Uber #Gratis #Free #TimBetaAjuda RT @pauloadriano47: RT @TiagoBeta2015: #timbeta - Valorize-se. É grá…', '2017-07-31 23:14:04', '3', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892161470435393536, 1);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('sdv');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uber', '1');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('gratis');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('free');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('timbetaajuda');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('timbeta');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username) values('Camila TIMBeta', 'CamilaTIMBeta17');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Camila TIMBeta';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892155335238197253, '#SDV HDRXB4JWUE #Uber #Gratis #Free #TimBetaAjuda RT @pauloadriano47: RT @TiagoBeta2015: #timbeta - Valorize-se. É grátis. #umRei', '2017-07-31 22:49:42', '3', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892155335238197253, 1);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('sdv');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uber', '1');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('gratis');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('free');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('timbetaajuda');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('timbeta');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('umrei');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('FabiMoreira.', 'fah_moreira', 'Brasil');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'FabiMoreira.';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892152718848131073, 'Vovó agora só quer andar de #uber, Braseeel !!!!', '2017-07-31 22:39:18', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892152718848131073, 1);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uber', '1');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('DiEGO CASTILHO', 'diegoocastilhoo', 'Brasil');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'DiEGO CASTILHO';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892150469379973121, 'Já usou o #UBER? Crie sua conta com o código UBERVALEDESCONTO e ganhe um descontão na sua primeira viagem ✅', '2017-07-31 22:30:21', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892150469379973121, 1);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uber', '1');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('piriguete', 'HannierMiranda', 'Porto Velho, Brasil');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'piriguete';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892138509808566272, 'Oi?? #uber nera barato? https://t.co/K8aYPh2R4J', '2017-07-31 21:42:50', '2', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892138509808566272, 1);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uber', '1');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('GIVALDO JUNIOR', 'givajunior23', 'Recife-PE, ');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'GIVALDO JUNIOR';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892132293837557760, 'Mais uma vez pego um #uber que vem com o ar desligado,nota baixíssima e mesmo assim tá rodando.@Uber_Brasil já foi bom. agora é1 táxi barato', '2017-07-31 21:18:08', '2', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892132293837557760, 1);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uber', '1');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Carlos Bueno Moraes', 'carlosbuenoDG', 'Goiânia');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Carlos Bueno Moraes';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892128251023380482, 'Iris afirma que regulamentação do @Uber em Goiânia será enviada à Câmara #Uber https://t.co/wxbSJmekZ3 https://t.co/pHmlrWHunG', '2017-07-31 21:02:04', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892128251023380482, 1);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uber', '1');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Diário de Goiás', 'diariodegoias', 'Goiânia');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Diário de Goiás';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892128244585164800, 'Iris afirma que regulamentação do @Uber em Goiânia será enviada à Câmara #Uber https://t.co/TuPW7ESTFg https://t.co/ey6a0a72eA', '2017-07-31 21:02:03', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892128244585164800, 1);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uber', '1');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Mauricio Oliveira', 'aventureiros', 'Rio de Janeiro - RJ');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Mauricio Oliveira';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892124010682691585, 'Ganhe R$20 de #desconto em cada uma de suas próximas 2 viagens no #Uber! Use e compartilhe o código: uber20pramim', '2017-07-31 20:45:13', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892124010682691585, 1);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('desconto');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uber', '1');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Rodrigo Gonçalves', 'rodrigorodz_', 'Cuiabá, Brasil');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Rodrigo Gonçalves';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892116586022227970, '#CuiabaSemVivo parabens @TelefonicaBr por deixar Cuiaba sem internet nos celulares! E os motoristas #uber como ficam?', '2017-07-31 20:15:43', '2', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892116586022227970, 1);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('cuiabasemvivo');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uber', '1');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Belit', 'belzboo', 'São Paulo');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Belit';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892110984889892868, 'Acabei de ver uma denúncia de um motorista de #Uber, acho que os apps deviam pegar os dados desses motoristas e bloquear no app tmb.', '2017-07-31 19:53:28', '2', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892110984889892868, 1);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uber', '1');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Victoria', 'Vic_Walker', 'São Paulo, Brasil');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Victoria';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892071154952884227, 'Precisa de uma carona? Usa #Uber com o código UBERVICWALKER e ganhe 2 viagens de até R$10! https://t.co/BMjMR7JPhE https://t.co/E0US2Lisxb', '2017-07-31 17:15:11', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892071154952884227, 1);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uber', '1');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Artur', 'arturjunior', 'to');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Artur';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892069406573985793, 'Usa esse código e ganhe 10 de desconto na corrida run6aue #uber', '2017-07-31 17:08:15', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892069406573985793, 1);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uber', '1');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username) values('rony.matos', 'rony_matos');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'rony.matos';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892068550311129088, 'RT @rony_matos: #motoG5S com o #uber  + o GPS não funciona. Quando uso o Uber x #waze  (dá falta de sinal GPS) o maps não da erro.  #motoro…', '2017-07-31 17:04:50', '2', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892068550311129088, 1);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('motog5s');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uber', '1');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('waze');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username) values('Camila TIMBeta', 'CamilaTIMBeta17');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Camila TIMBeta';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892064732617863168, '#SDV HDRXB4JWUE #Uber #Gratis #Free #TimBetaAjuda RT @MFilaretti: #timbeta - Durma com ideias. Acorde com atitudes. #umRei', '2017-07-31 16:49:40', '3', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892064732617863168, 1);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('sdv');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uber', '1');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('gratis');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('free');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('timbetaajuda');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('timbeta');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('umrei');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username) values('Cleber J Coimbra Jr', 'cleberjr67');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Cleber J Coimbra Jr';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892053907194753028, '#VouDeUber #NãoaoDecreto #Uber #CampoGrande #MS #MatoGrossodoSul FORA POLÍTICOS SAFADOS QUE SÓ QUEREM LEVAR VANTAGEM E PROPINA.', '2017-07-31 16:06:39', '2', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892053907194753028, 1);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('voudeuber', '1');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('nãoaodecreto');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uber', '1');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('campogrande');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('ms');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('matogrossodosul');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Uber Dicas', 'uberdicas', 'Brasil');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Uber Dicas';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892053502826090497, 'Levar marmita no carro, nóis #PorQueNao  #Uber', '2017-07-31 16:05:03', '3', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892053502826090497, 1);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('porquenao');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uber', '1');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Jornal do Tocantins', 'jornaltocantins', 'Tocantins, Brasil');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Jornal do Tocantins';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892052247957225474, 'Justiça derruba questionamento sobre fiscalização do #Uber https://t.co/lCvGColnnp (cont. aberto) https://t.co/lmj8dQXZL2', '2017-07-31 16:00:04', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892052247957225474, 1);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uber', '1');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username) values('MBA Jobs', 'mbajobpostings');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'MBA Jobs';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892041879260364800, 'RT @MBA_Jobs_USA_3: Senior Operations #manager, #business Intelligence - Chicago: #Uber, USA (Illinois). https://t.co/zPwX4mVaI6 #MBA #jobs…', '2017-07-31 15:18:52', '3', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892041879260364800, 1);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('manager');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('business');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uber', '1');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('mba');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('jobs');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('MBA Jobs in USA', 'MBA_Jobs_USA_3', 'Geneva, Switzerland');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'MBA Jobs in USA';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892041877008076802, 'Senior Operations #manager, #business Intelligence - Chicago: #Uber, USA (Illinois). https://t.co/zPwX4mVaI6 #MBA #jobs #USA', '2017-07-31 15:18:51', '3', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892041877008076802, 1);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('manager');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('business');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uber', '1');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('mba');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('jobs');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('usa');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('HAVANA Lab', 'havanalab', 'Porto Alegre, Brasil');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'HAVANA Lab';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892038950185050112, 'PROMOÇÃO - Ganhe desconto nas suas viagens de Uber com o nosso código 8st93a9fue - #UBER #CÓDIGO #PROMOÇÃO #DESCONTO', '2017-07-31 15:07:13', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892038950185050112, 1);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uber', '1');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('código');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('promoção');")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto) values('desconto');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Carlos Bueno Moraes', 'carlosbuenoDG', 'Goiânia');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Carlos Bueno Moraes';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892037656032546820, 'Iris afirma que regulamentação do @Uber em Goiânia será enviada à Câmara #Uber https://t.co/wxbSJmekZ3 https://t.co/YRhYlP2lNc', '2017-07-31 15:02:05', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892037656032546820, 1);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uber', '1');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Diário de Goiás', 'diariodegoias', 'Goiânia');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Diário de Goiás';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892037650504454144, 'Iris afirma que regulamentação do @Uber em Goiânia será enviada à Câmara #Uber https://t.co/TuPW7ESTFg https://t.co/kn2pB6LsBR', '2017-07-31 15:02:03', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892037650504454144, 1);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uber', '1');")
+except:
+    print('Erro')
+try:
+    dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('Mosby', 'porra_feh', 'Maceió');")
+    id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'Mosby';")[0][0]
+    id_lugar = 'null'
+    str_id_usuario = str(id_usuario)
+    str_id_lugar = str(id_lugar)
+    dao.Executa_SQL("insert into voudeque.tweet(id, texto, dataHora, id_sentimento, id_usuario, id_lugar) values(892018511366762497, 'Código de desconto #UBER qg833cvpue aproveitemm', '2017-07-31 13:46:00', '1', " + str_id_usuario + ", " + str_id_lugar + ");")
+    dao.Executa_SQL("insert into voudeque.tweet_marca(id_tweet, id_marca) values(892018511366762497, 1);")
+    dao.Executa_SQL("insert into voudeque.hashtag(texto,id_marca) values('uber', '1');")
+except:
+    print('Erro')
+
 try:
     dao.Executa_SQL("insert into voudeque.usuario(nome, username, nome_lugar) values('MarceloTV', 'MarceloTV', 'MarceloTV');")
     id_usuario = dao.Busca_SQL("select id from voudeque.usuario where usuario.nome = 'MarceloTV';")[0][0]
