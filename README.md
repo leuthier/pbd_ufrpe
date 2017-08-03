@@ -1,5 +1,5 @@
-### Projeto de Projeto de Banco de Dados (2017.1) (Python + Tweepy API + Naive Bayes + MySQL)
->Bac. Sistemas de Informação - UFRPE <br>
+### Projeto de Banco de Dados (2017.1) (Python + Tweepy API + Naive Bayes + MySQL)
+>Bacharelado em Sistemas de Informação - UFRPE <br>
 #### Twitter: [@pbd_ufrpe](https://twitter.com/pbd_ufrpe)
 
 #### Index
@@ -13,7 +13,7 @@
 #### 1) How to create/execute
 * 1.1) It's necessary a phone number at your Twitter account to register an application: [Phone Number](https://twitter.com/settings/add_phone?edit_phone=true)
 
-* 1.2) Create an application at Twitter: [https://apps.twitter.com/app/new]
+* 1.2) Create an application at Twitter: (New application)[https://apps.twitter.com/app/new]
 
 * 1.3) Copy your tokens: https://apps.twitter.com/app/
 
@@ -43,6 +43,7 @@ $ pip install nltk
 $ pip install scipy
 $ pip install sklearn
 $ pip install geopy
+$ pip install matplotlib
 ``` 
 
 * 1.6) Run [Script VouDeQue.sql](https://github.com/leuthier/pbd_ufrpe/blob/master/Script%20VouDeQue.sql) at MySQL to create a new schema. If necessary change adress or password connection visit [DataBase.py](https://github.com/leuthier/pbd_ufrpe/blob/master/persistencia/DataBase.py) and choose equals at MySQL.
@@ -51,20 +52,23 @@ $ pip install geopy
 
 * 1.8) All tweets found will be at [doc.py](https://github.com/leuthier/pbd_ufrpe/blob/master/doc.py), just run this archive to save at MySQL.
 
-#### 2) Objectives
-- [x] Search anything using Python and Twitter API
-- [x] Store tweets from Twitter to MySQL
-- [x] Sentiment Analysis
-- [ ] Make queries and graphs based on last searches at a database
+* 1.9) In case of trouble try this tutorial: [Miniconda tutorial](https://drive.google.com/open?id=1qobuMvhqyO0DCQH8Bu_lIpD8UM9RE0nEOc-LjvZDXEo)
 
-#### 3) Team
+#### 2) Objectives
+- [x] Search tweets about Uber, Cabify or 99Pop using Python and Twitter API
+- [x] Store tweets to MySQL
+- [x] Sentiment Analysis using Naive Bayes
+- [x] Make queries and graphs based on last searches at a database
+
+#### 3) Use Case Document
+https://drive.google.com/open?id=0By7Vlsi01ABLSFFCc2NiNFVuX1k
+
+#### 4) Team
 - [Ariana Lima](https://github.com/arianalima)<br>
 - [Bernardo Jr](https://github.com/bernardojr123)<br>
 - [Bruna Vasconcelos](https://github.com/brunapvasconcelos)<br>
 - [Victor Leuthier](https://github.com/leuthier)<br>
 
-#### 4) Questions
+#### 5) Questions
 [pbd2017[dot]1[at]gmail[dot]com](mailto:pbd2017.1@gmail.com)
 
-#### 5) References
-  * [Title](https://www.google.com/)
