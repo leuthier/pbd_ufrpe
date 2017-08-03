@@ -133,7 +133,7 @@ def menu():
             print("\nAgradecemos a visita.")
             break
         elif esc == "2":  #buscar por local
-            if buscar_locais() != None:
+            if len(buscar_locais()) != 0:
                 nums = []
                 for i in range(len(cidades)):
                     print(i,"-", cidades[i])
@@ -166,8 +166,10 @@ def menu():
             esc_data = input("\n>>>>")
 
             resultado = buscar_tweets_data(esc_data)
-
-            verificacao_data = esc_data.split("-")
+            try:
+                verificacao_data = esc_data.split("-")
+            except:
+                verificacao_data=[0,0,0]
             if len(verificacao_data[0]) == 4 and len(verificacao_data[1]) == 2 and len(verificacao_data[2]) == 2:
                 try:
                     int(verificacao_data[0]), int(verificacao_data[1]), int(verificacao_data[2])
@@ -200,7 +202,7 @@ def menu():
                 try:
                     int(verificacao_data[0]), int(verificacao_data[1]), int(verificacao_data[2])
 
-                    if buscar_locais() != None:
+                    if len(buscar_locais()) != 0:
                         nums = []
                         for i in range(len(cidades)):
                             print(i, "-", cidades[i])
