@@ -5,11 +5,11 @@
 #### Index
   * [1) How to create/execute](https://github.com/leuthier/pbd_ufrpe#1-how-to-createexecute)
   * [2) Objectives](https://github.com/leuthier/pbd_ufrpe#2-objectives)
-  * [3) Team](https://github.com/leuthier/pbd_ufrpe#3-team)
-  * [4) Questions?](https://github.com/leuthier/pbd_ufrpe#4-questions)
-  * [5) References](https://github.com/leuthier/pbd_ufrpe#5-references)
-  
+  * [3) Use Case Document](https://github.com/leuthier/pbd_ufrpe#3-use-case-document)
+  * [4) Team](https://github.com/leuthier/pbd_ufrpe#4-team)
+  * [5) Questions?](https://github.com/leuthier/pbd_ufrpe#5-questions)
 
+  
 #### 1) How to create/execute
 * 1.1) It's necessary a phone number at your Twitter account to register an application: [Phone Number](https://twitter.com/settings/add_phone?edit_phone=true)
 
